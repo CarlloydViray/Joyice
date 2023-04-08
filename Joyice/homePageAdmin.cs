@@ -16,5 +16,25 @@ namespace Joyice
         {
             InitializeComponent();
         }
+
+        private void homePageAdmin_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            adminUsers1.Visible = true;
+        }
+
+        private void adminUsers1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            adminUsers1.Visible = false;
+        }
     }
 }

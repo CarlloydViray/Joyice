@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="adminHome.Designer.cs">
+      <DependentUpon>adminHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adminUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="adminUsers.Designer.cs">
+      <DependentUpon>adminUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="homePageAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +84,18 @@
     <Compile Include="register.Designer.cs">
       <DependentUpon>register.cs</DependentUpon>
     </Compile>
+    <Compile Include="testing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="testing.Designer.cs">
+      <DependentUpon>testing.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="adminHome.resx">
+      <DependentUpon>adminHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminUsers.resx">
+      <DependentUpon>adminUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="homePageAdmin.resx">
       <DependentUpon>homePageAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,6 +113,9 @@
     </Compile>
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testing.resx">
+      <DependentUpon>testing.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

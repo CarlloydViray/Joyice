@@ -37,7 +37,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.25F);
-            this.label1.Location = new System.Drawing.Point(3, 187);
+            this.label1.Location = new System.Drawing.Point(338, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(678, 39);
             this.label1.TabIndex = 1;
@@ -47,7 +47,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(128, 279);
+            this.dataGridView1.Location = new System.Drawing.Point(441, 196);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(451, 251);
             this.dataGridView1.TabIndex = 2;
@@ -59,7 +59,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "adminUsers";
-            this.Size = new System.Drawing.Size(723, 562);
+            this.Size = new System.Drawing.Size(1329, 561);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

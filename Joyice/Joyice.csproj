@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -90,6 +91,12 @@
     <Compile Include="testing.Designer.cs">
       <DependentUpon>testing.cs</DependentUpon>
     </Compile>
+    <Compile Include="userReg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userReg.Designer.cs">
+      <DependentUpon>userReg.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="adminHome.resx">
       <DependentUpon>adminHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="testing.resx">
       <DependentUpon>testing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userReg.resx">
+      <DependentUpon>userReg.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

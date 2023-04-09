@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Joyice
@@ -19,12 +12,7 @@ namespace Joyice
 
         private void homePageAdmin_Load(object sender, EventArgs e)
         {
-            
-        }
 
-        private void btnUsers_Click(object sender, EventArgs e)
-        {
-            adminUsers1.Visible = true;
         }
 
         private void adminUsers1_Load(object sender, EventArgs e)
@@ -32,9 +20,20 @@ namespace Joyice
 
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
+        private void btnUsers_Click_1(object sender, EventArgs e)
         {
-            adminUsers1.Visible = false;
+            userReg1.Visible = true;
+
+        }
+
+        private void btnHome_Click_1(object sender, EventArgs e)
+        {
+            userReg1.Visible = false;
+        }
+
+        private void userReg1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

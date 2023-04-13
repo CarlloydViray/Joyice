@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -7,6 +8,12 @@ namespace Joyice
     public partial class homePageAdmin : Form
     {
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-91I62MI\\SQLEXPRESS;Initial Catalog=joyice;Integrated Security=True");
+        string backupDBFilePath = ConfigurationManager.AppSettings["backupDBFilePath"];
+        string imgPath = ConfigurationManager.AppSettings["imgFilePath"];
+
+        DateTime currentTime = DateTime.Now;
+
+
         public string userIDValue { get; set; }
 
         public homePageAdmin()
@@ -26,7 +33,7 @@ namespace Joyice
                 {
                     if (reader["user_profilePic"].ToString() == string.Empty)
                     {
-                        pictureBox1.ImageLocation = "C:\\Users\\Carlloyd Viray\\source\\repos\\Joyice\\Joyice\\images\\default.jpg";
+                        pictureBox1.ImageLocation = $"{imgPath}\\default.jpg";
                     }
                     else
                     {
@@ -83,7 +90,16 @@ namespace Joyice
 
         private void btnBackup_Click(object sender, EventArgs e)
         {
+            conn.Open();
+            string fileName = "MyDatabase_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".bak";
+            string backupQuery = $"BACKUP DATABASE joyice TO DISK = '{backupDBFilePath}\\{fileName}'";
 
+
+            SqlCommand command = new SqlCommand(backupQuery, conn);
+            command.ExecuteNonQuery();
+            conn.Close();
+
+            MessageBox.Show($"{fileName} created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -15,7 +16,7 @@ namespace Joyice
 
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-91I62MI\\SQLEXPRESS;Initial Catalog=joyice;Integrated Security=True");
 
-        string imgPath = "C:\\Users\\Carlloyd Viray\\source\\repos\\Joyice\\Joyice\\images";
+        string imgPath = ConfigurationManager.AppSettings["imgFilePath"];
 
 
         public string userIDValue { get; set; }
@@ -44,7 +45,7 @@ namespace Joyice
                     txtPassword.Text = reader["password"].ToString();
                     if (reader["user_profilePic"].ToString() == string.Empty)
                     {
-                        pictureBox1.ImageLocation = "C:\\Users\\Carlloyd Viray\\source\\repos\\Joyice\\Joyice\\images\\default.jpg";
+                        pictureBox1.ImageLocation = imgPath + "\\default.jpg"; ;
                     }
                     else
                     {
@@ -328,6 +329,8 @@ namespace Joyice
 
 
         }
+
+
     }
 
 }

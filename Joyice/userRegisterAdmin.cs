@@ -11,6 +11,7 @@ namespace Joyice
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-91I62MI\\SQLEXPRESS;Initial Catalog=joyice;Integrated Security=True");
         String sex;
 
+
         public string userIDValue { get; set; }
 
         public userRegisterAdmin()

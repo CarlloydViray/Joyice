@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -47,17 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="adminHome.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="AdminEditAccount.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="adminHome.Designer.cs">
-      <DependentUpon>adminHome.cs</DependentUpon>
-    </Compile>
-    <Compile Include="adminUsers.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="adminUsers.Designer.cs">
-      <DependentUpon>adminUsers.cs</DependentUpon>
+    <Compile Include="AdminEditAccount.Designer.cs">
+      <DependentUpon>AdminEditAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="homePageAdmin.cs">
       <SubType>Form</SubType>
@@ -77,6 +72,12 @@
     <Compile Include="login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductCategoryAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductCategoryAdmin.Designer.cs">
+      <DependentUpon>ProductCategoryAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="register.cs">
@@ -85,29 +86,23 @@
     <Compile Include="register.Designer.cs">
       <DependentUpon>register.cs</DependentUpon>
     </Compile>
-    <Compile Include="testing.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="userRegisterAdmin.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="testing.Designer.cs">
-      <DependentUpon>testing.cs</DependentUpon>
+    <Compile Include="userRegisterAdmin.Designer.cs">
+      <DependentUpon>userRegisterAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="userReg.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="userReg.Designer.cs">
-      <DependentUpon>userReg.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="adminHome.resx">
-      <DependentUpon>adminHome.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="adminUsers.resx">
-      <DependentUpon>adminUsers.cs</DependentUpon>
+    <EmbeddedResource Include="AdminEditAccount.resx">
+      <DependentUpon>AdminEditAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="homePageAdmin.resx">
       <DependentUpon>homePageAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductCategoryAdmin.resx">
+      <DependentUpon>ProductCategoryAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -121,11 +116,8 @@
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="testing.resx">
-      <DependentUpon>testing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="userReg.resx">
-      <DependentUpon>userReg.cs</DependentUpon>
+    <EmbeddedResource Include="userRegisterAdmin.resx">
+      <DependentUpon>userRegisterAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

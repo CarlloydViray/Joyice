@@ -47,40 +47,11 @@ namespace Joyice
         }
 
 
-        private void btnUsers_Click_1(object sender, EventArgs e)
-        {
-            userRegisterAdmin userRegisterAdmin = new userRegisterAdmin();
-            userRegisterAdmin.TopLevel = false;
-            pnlScreen.Controls.Add(userRegisterAdmin);
-            userRegisterAdmin.BringToFront();
-            userRegisterAdmin.userIDValue = lbluserID.Text;
-            userRegisterAdmin.Show();
 
-
-        }
-
-        private void btnProdCat_Click(object sender, EventArgs e)
-        {
-            ProductCategoryAdmin productCategoryAdmin = new ProductCategoryAdmin();
-            productCategoryAdmin.TopLevel = false;
-            pnlScreen.Controls.Add(productCategoryAdmin);
-            productCategoryAdmin.BringToFront();
-            productCategoryAdmin.userIDValue = lbluserID.Text;
-            productCategoryAdmin.Show();
-
-        }
 
         private void lklblMyAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            AdminEditAccount adminEditAccount = new AdminEditAccount()
-            {
-                TopLevel = false,
-                TopMost = true
-            };
 
-            pnlScreen.Controls.Add(adminEditAccount);
-            adminEditAccount.userIDValue = lbluserID.Text;
-            adminEditAccount.Show();
 
         }
 
@@ -89,17 +60,63 @@ namespace Joyice
 
         }
 
-        private void btnProducts_Click(object sender, EventArgs e)
+
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
 
         }
 
-        private void btnReports_Click(object sender, EventArgs e)
+
+
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnBackup_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void icnbtnHome_Click(object sender, EventArgs e)
+        {
+            adminHome adminHome = new adminHome();
+            adminHome.TopLevel = false;
+            pnlScreen.Controls.Add(adminHome);
+            adminHome.BringToFront();
+            adminHome.Show();
+
+        }
+
+        private void icnbtnUsers_Click(object sender, EventArgs e)
+        {
+            userRegisterAdmin userRegisterAdmin = new userRegisterAdmin();
+            userRegisterAdmin.TopLevel = false;
+            pnlScreen.Controls.Add(userRegisterAdmin);
+            userRegisterAdmin.BringToFront();
+            userRegisterAdmin.userIDValue = lbluserID.Text;
+            userRegisterAdmin.Show();
+        }
+
+
+
+        private void icnbtnProdCat_Click(object sender, EventArgs e)
+        {
+            ProductCategoryAdmin productCategoryAdmin = new ProductCategoryAdmin();
+            productCategoryAdmin.TopLevel = false;
+            pnlScreen.Controls.Add(productCategoryAdmin);
+            productCategoryAdmin.BringToFront();
+            productCategoryAdmin.userIDValue = lbluserID.Text;
+            productCategoryAdmin.Show();
+        }
+
+        private void btnBackup_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void icnbtnBackup_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Do you want to create database backup?", "Database Backup", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -114,20 +131,9 @@ namespace Joyice
 
                 MessageBox.Show($"{fileName} created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
 
-        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
-        {
-
-        }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            pnlScreen.Controls[0].Visible = false;
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
+        private void icnbtnLogout_Click(object sender, EventArgs e)
         {
             lbluserID.Text = string.Empty;
             login login = new login();
@@ -135,22 +141,20 @@ namespace Joyice
             this.Hide();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void iconButton1_Click(object sender, EventArgs e)
         {
+            AdminEditAccount adminEditAccount = new AdminEditAccount()
+            {
+                TopLevel = false,
+                TopMost = true
+            };
 
+            pnlScreen.Controls.Add(adminEditAccount);
+            adminEditAccount.userIDValue = lbluserID.Text;
+            adminEditAccount.Show();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void pnlScreen_Paint(object sender, PaintEventArgs e)
         {
 
         }

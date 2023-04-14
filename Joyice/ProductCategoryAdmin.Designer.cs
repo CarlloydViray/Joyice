@@ -51,7 +51,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(339, 156);
+            this.label1.Location = new System.Drawing.Point(535, 154);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 0;
@@ -61,7 +61,7 @@
             // 
             this.txtCategory.Enabled = false;
             this.txtCategory.ForeColor = System.Drawing.Color.Black;
-            this.txtCategory.Location = new System.Drawing.Point(394, 153);
+            this.txtCategory.Location = new System.Drawing.Point(590, 151);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(253, 20);
             this.txtCategory.TabIndex = 1;
@@ -70,7 +70,7 @@
             // btnCancel
             // 
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(394, 223);
+            this.btnCancel.Location = new System.Drawing.Point(590, 221);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(253, 23);
             this.btnCancel.TabIndex = 99;
@@ -82,7 +82,7 @@
             // btnDelete
             // 
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(394, 252);
+            this.btnDelete.Location = new System.Drawing.Point(590, 250);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(253, 23);
             this.btnDelete.TabIndex = 98;
@@ -93,7 +93,7 @@
             // btnUpdate
             // 
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(394, 223);
+            this.btnUpdate.Location = new System.Drawing.Point(590, 221);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(253, 23);
             this.btnUpdate.TabIndex = 97;
@@ -104,7 +104,7 @@
             // btnCreate
             // 
             this.btnCreate.ForeColor = System.Drawing.Color.Black;
-            this.btnCreate.Location = new System.Drawing.Point(394, 194);
+            this.btnCreate.Location = new System.Drawing.Point(590, 192);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(253, 23);
             this.btnCreate.TabIndex = 96;
@@ -134,16 +134,16 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 295);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 310);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1084, 275);
+            this.dataGridView1.Size = new System.Drawing.Size(1433, 617);
             this.dataGridView1.TabIndex = 100;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // lblUserID
             // 
             this.lblUserID.AutoSize = true;
-            this.lblUserID.Location = new System.Drawing.Point(1008, 573);
+            this.lblUserID.Location = new System.Drawing.Point(1378, 956);
             this.lblUserID.Name = "lblUserID";
             this.lblUserID.Size = new System.Drawing.Size(38, 13);
             this.lblUserID.TabIndex = 101;
@@ -152,7 +152,7 @@
             // lblCatID
             // 
             this.lblCatID.AutoSize = true;
-            this.lblCatID.Location = new System.Drawing.Point(1065, 573);
+            this.lblCatID.Location = new System.Drawing.Point(1435, 956);
             this.lblCatID.Name = "lblCatID";
             this.lblCatID.Size = new System.Drawing.Size(34, 13);
             this.lblCatID.TabIndex = 102;
@@ -165,7 +165,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1111, 58);
+            this.panel1.Size = new System.Drawing.Size(1477, 58);
             this.panel1.TabIndex = 103;
             // 
             // label12
@@ -182,7 +182,7 @@
             // btnInsert
             // 
             this.btnInsert.ForeColor = System.Drawing.Color.Black;
-            this.btnInsert.Location = new System.Drawing.Point(394, 194);
+            this.btnInsert.Location = new System.Drawing.Point(590, 192);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(253, 23);
             this.btnInsert.TabIndex = 104;
@@ -194,7 +194,7 @@
             // btnNewUpdate
             // 
             this.btnNewUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnNewUpdate.Location = new System.Drawing.Point(394, 194);
+            this.btnNewUpdate.Location = new System.Drawing.Point(590, 192);
             this.btnNewUpdate.Name = "btnNewUpdate";
             this.btnNewUpdate.Size = new System.Drawing.Size(253, 23);
             this.btnNewUpdate.TabIndex = 105;
@@ -207,7 +207,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1111, 595);
+            this.ClientSize = new System.Drawing.Size(1477, 978);
             this.ControlBox = false;
             this.Controls.Add(this.btnNewUpdate);
             this.Controls.Add(this.btnInsert);

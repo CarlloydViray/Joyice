@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnUsers = new System.Windows.Forms.Button();
-            this.btnProdCat = new System.Windows.Forms.Button();
-            this.btnProducts = new System.Windows.Forms.Button();
-            this.btnReports = new System.Windows.Forms.Button();
-            this.btnBackup = new System.Windows.Forms.Button();
             this.lbluserID = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.lklblMyAccount = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.icnbtnLogout = new FontAwesome.Sharp.IconButton();
+            this.icnbtnBackup = new FontAwesome.Sharp.IconButton();
+            this.icnbtnReports = new FontAwesome.Sharp.IconButton();
+            this.icnbtnProducts = new FontAwesome.Sharp.IconButton();
+            this.icnbtnProdCat = new FontAwesome.Sharp.IconButton();
+            this.icnbtnUsers = new FontAwesome.Sharp.IconButton();
+            this.icnbtnHome = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlScreen = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,71 +48,6 @@
             this.panel1.SuspendLayout();
             this.pnlScreen.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnUsers
-            // 
-            this.btnUsers.FlatAppearance.BorderSize = 0;
-            this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsers.Location = new System.Drawing.Point(0, 219);
-            this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(200, 50);
-            this.btnUsers.TabIndex = 16;
-            this.btnUsers.Text = "USERS";
-            this.btnUsers.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnUsers.UseVisualStyleBackColor = true;
-            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click_1);
-            // 
-            // btnProdCat
-            // 
-            this.btnProdCat.FlatAppearance.BorderSize = 0;
-            this.btnProdCat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProdCat.Location = new System.Drawing.Point(0, 290);
-            this.btnProdCat.Name = "btnProdCat";
-            this.btnProdCat.Size = new System.Drawing.Size(200, 50);
-            this.btnProdCat.TabIndex = 17;
-            this.btnProdCat.Text = "PRODUCT CATEGORIES";
-            this.btnProdCat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnProdCat.UseVisualStyleBackColor = true;
-            this.btnProdCat.Click += new System.EventHandler(this.btnProdCat_Click);
-            // 
-            // btnProducts
-            // 
-            this.btnProducts.FlatAppearance.BorderSize = 0;
-            this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProducts.Location = new System.Drawing.Point(0, 361);
-            this.btnProducts.Name = "btnProducts";
-            this.btnProducts.Size = new System.Drawing.Size(200, 50);
-            this.btnProducts.TabIndex = 18;
-            this.btnProducts.Text = "PRODUCTS";
-            this.btnProducts.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnProducts.UseVisualStyleBackColor = true;
-            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
-            // 
-            // btnReports
-            // 
-            this.btnReports.FlatAppearance.BorderSize = 0;
-            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReports.Location = new System.Drawing.Point(0, 432);
-            this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(200, 50);
-            this.btnReports.TabIndex = 19;
-            this.btnReports.Text = "REPORTS";
-            this.btnReports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnReports.UseVisualStyleBackColor = true;
-            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
-            // 
-            // btnBackup
-            // 
-            this.btnBackup.FlatAppearance.BorderSize = 0;
-            this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackup.Location = new System.Drawing.Point(0, 503);
-            this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(200, 50);
-            this.btnBackup.TabIndex = 20;
-            this.btnBackup.Text = "DATABASE BACKUP";
-            this.btnBackup.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBackup.UseVisualStyleBackColor = true;
-            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
             // lbluserID
             // 
@@ -129,32 +64,6 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
-            // btnHome
-            // 
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Location = new System.Drawing.Point(0, 148);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(200, 50);
-            this.btnHome.TabIndex = 22;
-            this.btnHome.Text = "HOME";
-            this.btnHome.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Location = new System.Drawing.Point(0, 574);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(200, 50);
-            this.btnLogout.TabIndex = 23;
-            this.btnLogout.Text = "LOGOUT";
-            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -165,23 +74,11 @@
             this.label1.Text = "Home";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // lklblMyAccount
-            // 
-            this.lklblMyAccount.AutoSize = true;
-            this.lklblMyAccount.Location = new System.Drawing.Point(51, 113);
-            this.lklblMyAccount.Name = "lklblMyAccount";
-            this.lklblMyAccount.Size = new System.Drawing.Size(85, 13);
-            this.lklblMyAccount.TabIndex = 25;
-            this.lklblMyAccount.TabStop = true;
-            this.lklblMyAccount.Text = "Edit My Account";
-            this.lklblMyAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lklblMyAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklblMyAccount_LinkClicked);
-            // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(48, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(47, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(91, 88);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
@@ -190,20 +87,161 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.panel1.Controls.Add(this.iconButton1);
+            this.panel1.Controls.Add(this.icnbtnLogout);
+            this.panel1.Controls.Add(this.icnbtnBackup);
+            this.panel1.Controls.Add(this.icnbtnReports);
+            this.panel1.Controls.Add(this.icnbtnProducts);
+            this.panel1.Controls.Add(this.icnbtnProdCat);
+            this.panel1.Controls.Add(this.icnbtnUsers);
+            this.panel1.Controls.Add(this.icnbtnHome);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.lklblMyAccount);
-            this.panel1.Controls.Add(this.btnHome);
-            this.panel1.Controls.Add(this.btnLogout);
-            this.panel1.Controls.Add(this.btnBackup);
-            this.panel1.Controls.Add(this.btnReports);
-            this.panel1.Controls.Add(this.btnUsers);
-            this.panel1.Controls.Add(this.btnProdCat);
-            this.panel1.Controls.Add(this.btnProducts);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 674);
+            this.panel1.Size = new System.Drawing.Size(200, 1018);
             this.panel1.TabIndex = 27;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.UserGear;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton1.Location = new System.Drawing.Point(0, 132);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(191, 45);
+            this.iconButton1.TabIndex = 34;
+            this.iconButton1.Text = "Edit my account";
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // icnbtnLogout
+            // 
+            this.icnbtnLogout.FlatAppearance.BorderSize = 0;
+            this.icnbtnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icnbtnLogout.ForeColor = System.Drawing.Color.White;
+            this.icnbtnLogout.IconChar = FontAwesome.Sharp.IconChar.LeftLong;
+            this.icnbtnLogout.IconColor = System.Drawing.Color.White;
+            this.icnbtnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icnbtnLogout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.icnbtnLogout.Location = new System.Drawing.Point(2, 835);
+            this.icnbtnLogout.Name = "icnbtnLogout";
+            this.icnbtnLogout.Size = new System.Drawing.Size(197, 72);
+            this.icnbtnLogout.TabIndex = 33;
+            this.icnbtnLogout.Text = "LOGOUT";
+            this.icnbtnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.icnbtnLogout.UseVisualStyleBackColor = true;
+            this.icnbtnLogout.Click += new System.EventHandler(this.icnbtnLogout_Click);
+            // 
+            // icnbtnBackup
+            // 
+            this.icnbtnBackup.FlatAppearance.BorderSize = 0;
+            this.icnbtnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icnbtnBackup.ForeColor = System.Drawing.Color.White;
+            this.icnbtnBackup.IconChar = FontAwesome.Sharp.IconChar.Download;
+            this.icnbtnBackup.IconColor = System.Drawing.Color.White;
+            this.icnbtnBackup.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icnbtnBackup.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.icnbtnBackup.Location = new System.Drawing.Point(2, 732);
+            this.icnbtnBackup.Name = "icnbtnBackup";
+            this.icnbtnBackup.Size = new System.Drawing.Size(197, 72);
+            this.icnbtnBackup.TabIndex = 32;
+            this.icnbtnBackup.Text = "DATABASE BACKUP";
+            this.icnbtnBackup.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.icnbtnBackup.UseVisualStyleBackColor = true;
+            this.icnbtnBackup.Click += new System.EventHandler(this.icnbtnBackup_Click);
+            // 
+            // icnbtnReports
+            // 
+            this.icnbtnReports.FlatAppearance.BorderSize = 0;
+            this.icnbtnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icnbtnReports.ForeColor = System.Drawing.Color.White;
+            this.icnbtnReports.IconChar = FontAwesome.Sharp.IconChar.FileContract;
+            this.icnbtnReports.IconColor = System.Drawing.Color.White;
+            this.icnbtnReports.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icnbtnReports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.icnbtnReports.Location = new System.Drawing.Point(2, 629);
+            this.icnbtnReports.Name = "icnbtnReports";
+            this.icnbtnReports.Size = new System.Drawing.Size(197, 72);
+            this.icnbtnReports.TabIndex = 31;
+            this.icnbtnReports.Text = "REPORTS";
+            this.icnbtnReports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.icnbtnReports.UseVisualStyleBackColor = true;
+            // 
+            // icnbtnProducts
+            // 
+            this.icnbtnProducts.FlatAppearance.BorderSize = 0;
+            this.icnbtnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icnbtnProducts.ForeColor = System.Drawing.Color.White;
+            this.icnbtnProducts.IconChar = FontAwesome.Sharp.IconChar.IceCream;
+            this.icnbtnProducts.IconColor = System.Drawing.Color.White;
+            this.icnbtnProducts.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icnbtnProducts.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.icnbtnProducts.Location = new System.Drawing.Point(2, 526);
+            this.icnbtnProducts.Name = "icnbtnProducts";
+            this.icnbtnProducts.Size = new System.Drawing.Size(197, 72);
+            this.icnbtnProducts.TabIndex = 30;
+            this.icnbtnProducts.Text = "PRODUCTS";
+            this.icnbtnProducts.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.icnbtnProducts.UseVisualStyleBackColor = true;
+            // 
+            // icnbtnProdCat
+            // 
+            this.icnbtnProdCat.FlatAppearance.BorderSize = 0;
+            this.icnbtnProdCat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icnbtnProdCat.ForeColor = System.Drawing.Color.White;
+            this.icnbtnProdCat.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
+            this.icnbtnProdCat.IconColor = System.Drawing.Color.White;
+            this.icnbtnProdCat.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icnbtnProdCat.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.icnbtnProdCat.Location = new System.Drawing.Point(0, 423);
+            this.icnbtnProdCat.Name = "icnbtnProdCat";
+            this.icnbtnProdCat.Size = new System.Drawing.Size(200, 72);
+            this.icnbtnProdCat.TabIndex = 29;
+            this.icnbtnProdCat.Text = "PRODUCT CATEGORIES";
+            this.icnbtnProdCat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.icnbtnProdCat.UseVisualStyleBackColor = true;
+            this.icnbtnProdCat.Click += new System.EventHandler(this.icnbtnProdCat_Click);
+            // 
+            // icnbtnUsers
+            // 
+            this.icnbtnUsers.FlatAppearance.BorderSize = 0;
+            this.icnbtnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icnbtnUsers.ForeColor = System.Drawing.Color.White;
+            this.icnbtnUsers.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            this.icnbtnUsers.IconColor = System.Drawing.Color.White;
+            this.icnbtnUsers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icnbtnUsers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.icnbtnUsers.Location = new System.Drawing.Point(2, 320);
+            this.icnbtnUsers.Name = "icnbtnUsers";
+            this.icnbtnUsers.Size = new System.Drawing.Size(197, 72);
+            this.icnbtnUsers.TabIndex = 28;
+            this.icnbtnUsers.Text = "MANAGE USERS";
+            this.icnbtnUsers.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.icnbtnUsers.UseVisualStyleBackColor = true;
+            this.icnbtnUsers.Click += new System.EventHandler(this.icnbtnUsers_Click);
+            // 
+            // icnbtnHome
+            // 
+            this.icnbtnHome.FlatAppearance.BorderSize = 0;
+            this.icnbtnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icnbtnHome.ForeColor = System.Drawing.Color.White;
+            this.icnbtnHome.IconChar = FontAwesome.Sharp.IconChar.House;
+            this.icnbtnHome.IconColor = System.Drawing.Color.White;
+            this.icnbtnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icnbtnHome.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.icnbtnHome.Location = new System.Drawing.Point(0, 217);
+            this.icnbtnHome.Name = "icnbtnHome";
+            this.icnbtnHome.Size = new System.Drawing.Size(200, 72);
+            this.icnbtnHome.TabIndex = 27;
+            this.icnbtnHome.Text = "HOME";
+            this.icnbtnHome.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.icnbtnHome.UseVisualStyleBackColor = true;
+            this.icnbtnHome.Click += new System.EventHandler(this.icnbtnHome_Click);
             // 
             // panel2
             // 
@@ -211,7 +249,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1127, 40);
+            this.panel2.Size = new System.Drawing.Size(1477, 40);
             this.panel2.TabIndex = 28;
             // 
             // pnlScreen
@@ -222,25 +260,26 @@
             this.pnlScreen.ForeColor = System.Drawing.Color.White;
             this.pnlScreen.Location = new System.Drawing.Point(200, 40);
             this.pnlScreen.Name = "pnlScreen";
-            this.pnlScreen.Size = new System.Drawing.Size(1127, 634);
-            this.pnlScreen.TabIndex = 29;
+            this.pnlScreen.Size = new System.Drawing.Size(1477, 978);
+            this.pnlScreen.TabIndex = 30;
+            this.pnlScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlScreen_Paint);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(348, 277);
+            this.label2.Location = new System.Drawing.Point(144, 405);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(501, 39);
+            this.label2.Size = new System.Drawing.Size(1224, 76);
             this.label2.TabIndex = 0;
-            this.label2.Text = "WELCOME TO ADMIN JOYICE";
+            this.label2.Text = "WELCOME JOYICE ADMIN MESSAGE";
             // 
             // homePageAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1327, 674);
+            this.ClientSize = new System.Drawing.Size(1677, 1018);
             this.ControlBox = false;
             this.Controls.Add(this.pnlScreen);
             this.Controls.Add(this.panel2);
@@ -255,7 +294,6 @@
             this.Load += new System.EventHandler(this.homePageAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.pnlScreen.ResumeLayout(false);
             this.pnlScreen.PerformLayout();
             this.ResumeLayout(false);
@@ -264,20 +302,20 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnUsers;
-        private System.Windows.Forms.Button btnProdCat;
-        private System.Windows.Forms.Button btnProducts;
-        private System.Windows.Forms.Button btnReports;
-        private System.Windows.Forms.Button btnBackup;
         private System.Windows.Forms.Label lbluserID;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel lklblMyAccount;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private FontAwesome.Sharp.IconButton icnbtnHome;
+        private FontAwesome.Sharp.IconButton icnbtnProdCat;
+        private FontAwesome.Sharp.IconButton icnbtnUsers;
+        private FontAwesome.Sharp.IconButton icnbtnProducts;
+        private FontAwesome.Sharp.IconButton icnbtnBackup;
+        private FontAwesome.Sharp.IconButton icnbtnReports;
+        private FontAwesome.Sharp.IconButton icnbtnLogout;
+        private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Panel pnlScreen;
         private System.Windows.Forms.Label label2;
     }

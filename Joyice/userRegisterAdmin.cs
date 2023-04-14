@@ -359,23 +359,7 @@ namespace Joyice
 
             lblUserID.Text = userIDValue;
 
-            SqlCommand cmd2 = new SqlCommand("SELECT * FROM users_table WHERE userID= '" + lblUserID.Text + "'", conn);
-            conn.Open();
-            using (SqlDataReader reader = cmd2.ExecuteReader())
-            {
-                if (reader.Read())
-                {
 
-                    if (reader["user_profilePic"].ToString() == string.Empty)
-                    {
-                        pictureBox1.ImageLocation = "C:\\Users\\Carlloyd Viray\\source\\repos\\Joyice\\Joyice\\images\\default.jpg";
-                    }
-                    else
-                    {
-                        pictureBox1.ImageLocation = reader["user_profilePic"].ToString();
-                    }
-                }
-            }
             conn.Close();
         }
 

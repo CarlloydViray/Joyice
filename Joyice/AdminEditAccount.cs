@@ -300,37 +300,6 @@ namespace Joyice
 
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            homePageAdmin homePageAdmin = new homePageAdmin();
-            homePageAdmin.userIDValue = lblUserID.Text;
-            homePageAdmin.Show();
-            this.Hide();
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            lblUserID.Text = string.Empty;
-            login login = new login();
-            login.Show();
-            this.Hide();
-        }
-
-        private void btnUsers_Click(object sender, EventArgs e)
-        {
-            userRegisterAdmin userRegisterAdmin = new userRegisterAdmin();
-            userRegisterAdmin.userIDValue = lblUserID.Text;
-            userRegisterAdmin.Show();
-            this.Hide();
-        }
-
-        private void btnDEBUG_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-
     }
 
 }

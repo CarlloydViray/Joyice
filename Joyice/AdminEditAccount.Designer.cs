@@ -58,7 +58,7 @@
             // lblUserID
             // 
             this.lblUserID.AutoSize = true;
-            this.lblUserID.Location = new System.Drawing.Point(861, 593);
+            this.lblUserID.Location = new System.Drawing.Point(980, 840);
             this.lblUserID.Name = "lblUserID";
             this.lblUserID.Size = new System.Drawing.Size(38, 13);
             this.lblUserID.TabIndex = 29;
@@ -68,7 +68,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(582, 171);
+            this.pictureBox1.Location = new System.Drawing.Point(601, 174);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(262, 250);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -80,7 +80,7 @@
             // 
             this.email.AutoSize = true;
             this.email.ForeColor = System.Drawing.Color.Black;
-            this.email.Location = new System.Drawing.Point(338, 190);
+            this.email.Location = new System.Drawing.Point(553, 509);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(38, 13);
             this.email.TabIndex = 32;
@@ -90,7 +90,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(289, 226);
+            this.label3.Location = new System.Drawing.Point(504, 545);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 13);
             this.label3.TabIndex = 33;
@@ -100,7 +100,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(315, 259);
+            this.label4.Location = new System.Drawing.Point(530, 578);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 34;
@@ -110,7 +110,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.ForeColor = System.Drawing.Color.Black;
-            this.lblEmail.Location = new System.Drawing.Point(384, 190);
+            this.lblEmail.Location = new System.Drawing.Point(599, 509);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(32, 13);
             this.lblEmail.TabIndex = 35;
@@ -120,7 +120,7 @@
             // 
             this.lblContactNumber.AutoSize = true;
             this.lblContactNumber.ForeColor = System.Drawing.Color.Black;
-            this.lblContactNumber.Location = new System.Drawing.Point(384, 226);
+            this.lblContactNumber.Location = new System.Drawing.Point(599, 545);
             this.lblContactNumber.Name = "lblContactNumber";
             this.lblContactNumber.Size = new System.Drawing.Size(81, 13);
             this.lblContactNumber.TabIndex = 36;
@@ -130,7 +130,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.ForeColor = System.Drawing.Color.Black;
-            this.lblUsername.Location = new System.Drawing.Point(384, 259);
+            this.lblUsername.Location = new System.Drawing.Point(599, 578);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(55, 13);
             this.lblUsername.TabIndex = 37;
@@ -139,9 +139,9 @@
             // btnEditAccount
             // 
             this.btnEditAccount.ForeColor = System.Drawing.Color.Black;
-            this.btnEditAccount.Location = new System.Drawing.Point(387, 370);
+            this.btnEditAccount.Location = new System.Drawing.Point(602, 689);
             this.btnEditAccount.Name = "btnEditAccount";
-            this.btnEditAccount.Size = new System.Drawing.Size(128, 23);
+            this.btnEditAccount.Size = new System.Drawing.Size(262, 23);
             this.btnEditAccount.TabIndex = 38;
             this.btnEditAccount.Text = "Edit Account";
             this.btnEditAccount.UseVisualStyleBackColor = true;
@@ -150,7 +150,7 @@
             // btnChangePicture
             // 
             this.btnChangePicture.ForeColor = System.Drawing.Color.Black;
-            this.btnChangePicture.Location = new System.Drawing.Point(653, 465);
+            this.btnChangePicture.Location = new System.Drawing.Point(677, 455);
             this.btnChangePicture.Name = "btnChangePicture";
             this.btnChangePicture.Size = new System.Drawing.Size(128, 23);
             this.btnChangePicture.TabIndex = 39;
@@ -162,36 +162,36 @@
             // txtEmail
             // 
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.Location = new System.Drawing.Point(386, 190);
+            this.txtEmail.Location = new System.Drawing.Point(601, 509);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(128, 20);
+            this.txtEmail.Size = new System.Drawing.Size(262, 20);
             this.txtEmail.TabIndex = 40;
             this.txtEmail.Visible = false;
             // 
             // txtContactNumber
             // 
             this.txtContactNumber.ForeColor = System.Drawing.Color.Black;
-            this.txtContactNumber.Location = new System.Drawing.Point(386, 226);
+            this.txtContactNumber.Location = new System.Drawing.Point(601, 545);
             this.txtContactNumber.Name = "txtContactNumber";
-            this.txtContactNumber.Size = new System.Drawing.Size(128, 20);
+            this.txtContactNumber.Size = new System.Drawing.Size(262, 20);
             this.txtContactNumber.TabIndex = 41;
             this.txtContactNumber.Visible = false;
             // 
             // txtUsername
             // 
             this.txtUsername.ForeColor = System.Drawing.Color.Black;
-            this.txtUsername.Location = new System.Drawing.Point(386, 259);
+            this.txtUsername.Location = new System.Drawing.Point(601, 578);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(128, 20);
+            this.txtUsername.Size = new System.Drawing.Size(262, 20);
             this.txtUsername.TabIndex = 42;
             this.txtUsername.Visible = false;
             // 
             // btnSave
             // 
             this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(386, 370);
+            this.btnSave.Location = new System.Drawing.Point(601, 689);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(128, 23);
+            this.btnSave.Size = new System.Drawing.Size(262, 23);
             this.btnSave.TabIndex = 43;
             this.btnSave.Text = "Save Changes";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -201,9 +201,9 @@
             // btnCancel
             // 
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(387, 400);
+            this.btnCancel.Location = new System.Drawing.Point(602, 719);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(128, 23);
+            this.btnCancel.Size = new System.Drawing.Size(262, 23);
             this.btnCancel.TabIndex = 45;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -214,17 +214,18 @@
             // 
             this.txtPassword.Enabled = false;
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtPassword.Location = new System.Drawing.Point(386, 290);
+            this.txtPassword.Location = new System.Drawing.Point(601, 609);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(128, 20);
+            this.txtPassword.Size = new System.Drawing.Size(262, 20);
             this.txtPassword.TabIndex = 48;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(315, 290);
+            this.label5.Location = new System.Drawing.Point(530, 609);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 46;
@@ -233,10 +234,10 @@
             // txtRePassword
             // 
             this.txtRePassword.ForeColor = System.Drawing.Color.Black;
-            this.txtRePassword.Location = new System.Drawing.Point(386, 328);
+            this.txtRePassword.Location = new System.Drawing.Point(601, 647);
             this.txtRePassword.Name = "txtRePassword";
             this.txtRePassword.PasswordChar = '*';
-            this.txtRePassword.Size = new System.Drawing.Size(128, 20);
+            this.txtRePassword.Size = new System.Drawing.Size(262, 20);
             this.txtRePassword.TabIndex = 51;
             this.txtRePassword.Visible = false;
             // 
@@ -244,7 +245,7 @@
             // 
             this.lblRetypePassword.AutoSize = true;
             this.lblRetypePassword.ForeColor = System.Drawing.Color.Black;
-            this.lblRetypePassword.Location = new System.Drawing.Point(278, 328);
+            this.lblRetypePassword.Location = new System.Drawing.Point(493, 647);
             this.lblRetypePassword.Name = "lblRetypePassword";
             this.lblRetypePassword.Size = new System.Drawing.Size(96, 13);
             this.lblRetypePassword.TabIndex = 49;
@@ -255,7 +256,7 @@
             // 
             this.lblPicName.AutoSize = true;
             this.lblPicName.ForeColor = System.Drawing.Color.Black;
-            this.lblPicName.Location = new System.Drawing.Point(784, 424);
+            this.lblPicName.Location = new System.Drawing.Point(803, 427);
             this.lblPicName.Name = "lblPicName";
             this.lblPicName.Size = new System.Drawing.Size(60, 13);
             this.lblPicName.TabIndex = 52;
@@ -270,7 +271,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1127, 58);
+            this.panel1.Size = new System.Drawing.Size(1477, 58);
             this.panel1.TabIndex = 53;
             // 
             // label1
@@ -288,7 +289,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1127, 634);
+            this.ClientSize = new System.Drawing.Size(1477, 978);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblPicName);

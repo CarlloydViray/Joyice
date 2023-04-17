@@ -222,10 +222,11 @@ namespace Joyice
 
 
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE users_table SET user_email=@user_email, user_contactNum=@user_contactNum, username=@username, user_profilePic=@user_profilePic WHERE userID='" + lblUserID.Text + "'", conn);
+                    SqlCommand cmd = new SqlCommand("UPDATE users_table SET user_email=@user_email, user_contactNum=@user_contactNum, username=@username,  password=@password, user_profilePic=@user_profilePic WHERE userID='" + lblUserID.Text + "'", conn);
                     cmd.Parameters.AddWithValue("@user_email", txtEmail.Text);
                     cmd.Parameters.AddWithValue("@user_contactNum", txtContactNumber.Text);
                     cmd.Parameters.AddWithValue("@username", txtUsername.Text);
+                    cmd.Parameters.AddWithValue("@password", txtPassword.Text);
                     cmd.Parameters.AddWithValue("@user_profilePic", savePath);
                     cmd.ExecuteNonQuery();
                     conn.Close();
@@ -300,6 +301,10 @@ namespace Joyice
 
         }
 
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

@@ -293,7 +293,7 @@ namespace Joyice
                         rdMale.Checked = false;
                         rdFemale.Checked = false;
 
-                        SqlCommand cmd2 = new SqlCommand("SELECT * FROM users_table", conn);
+                        SqlCommand cmd2 = new SqlCommand("SELECT userID, user_firstName, user_lastName, user_sex, user_bday, user_address, user_contactNum, user_email, user_type, username FROM users_table", conn);
 
                         SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
 
@@ -336,7 +336,6 @@ namespace Joyice
                 txtEmail.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
                 cmUserType.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
                 txtUsername.Text = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
-                txtPassword.Text = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
                 lblId.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             }
         }
@@ -348,7 +347,7 @@ namespace Joyice
 
         private void userRegisterAdmin_Load(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM users_table", conn);
+            SqlCommand cmd = new SqlCommand("SELECT userID, user_firstName, user_lastName, user_sex, user_bday, user_address, user_contactNum, user_email, user_type, username FROM users_table", conn);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
 
@@ -387,11 +386,7 @@ namespace Joyice
 
         }
 
-        private void btnDEBUG_Click(object sender, EventArgs e)
-        {
-            //MessageBox.Show();
 
-        }
 
         private void btnSaveRegister_Click(object sender, EventArgs e)
         {
@@ -473,7 +468,7 @@ namespace Joyice
 
                         MessageBox.Show("User Created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        SqlCommand cmd3 = new SqlCommand("SELECT * FROM users_table", conn);
+                        SqlCommand cmd3 = new SqlCommand("SELECT userID, user_firstName, user_lastName, user_sex, user_bday, user_address, user_contactNum, user_email, user_type, username FROM users_table", conn);
 
                         SqlDataAdapter da3 = new SqlDataAdapter(cmd3);
 
@@ -558,7 +553,7 @@ namespace Joyice
 
                 MessageBox.Show("User Credentials Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                SqlCommand cmd2 = new SqlCommand("SELECT * FROM users_table", conn);
+                SqlCommand cmd2 = new SqlCommand("SELECT userID, user_firstName, user_lastName, user_sex, user_bday, user_address, user_contactNum, user_email, user_type, username FROM users_table", conn);
 
                 SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
 

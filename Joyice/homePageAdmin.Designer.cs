@@ -188,6 +188,7 @@
             this.icnbtnProducts.Text = "PRODUCTS";
             this.icnbtnProducts.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.icnbtnProducts.UseVisualStyleBackColor = true;
+            this.icnbtnProducts.Click += new System.EventHandler(this.icnbtnProducts_Click);
             // 
             // icnbtnProdCat
             // 

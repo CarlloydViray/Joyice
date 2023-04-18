@@ -10,7 +10,6 @@ C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\obj\Debug\Joyice.csproj.CoreC
 C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\obj\Debug\Joyice.exe
 C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\obj\Debug\Joyice.pdb
 C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\obj\Debug\Joyice.homePageAdmin.resources
-C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\obj\Debug\Joyice.register.resources
 C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\obj\Debug\Joyice.userRegisterAdmin.resources
 C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\obj\Debug\Joyice.ProductCategoryAdmin.resources
 C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\obj\Debug\Joyice.AdminEditAccount.resources
@@ -41,3 +40,4 @@ C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\bin\Debug\System.Memory.xml
 C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\obj\Debug\Joyice.adminHome.resources
+C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\obj\Debug\Joyice.productsAdmin.resources

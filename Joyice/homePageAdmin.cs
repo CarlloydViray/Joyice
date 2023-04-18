@@ -158,5 +158,15 @@ namespace Joyice
         {
 
         }
+
+        private void icnbtnProducts_Click(object sender, EventArgs e)
+        {
+            productsAdmin productsAdmin = new productsAdmin();
+            productsAdmin.TopLevel = false;
+            pnlScreen.Controls.Add(productsAdmin);
+            productsAdmin.BringToFront();
+            productsAdmin.userIDValue = lbluserID.Text;
+            productsAdmin.Show();
+        }
     }
 }

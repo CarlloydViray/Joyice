@@ -36,7 +36,7 @@ namespace Joyice
 
         private void ProductCategoryAdmin_Load(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("SELECT categories_table.cat_ID, categories_table.cat_name, categories_table.cat_createdAt, users_table.userID AS cat_createdByID, users_table.user_firstName as cat_creatorFirstName, users_table.user_lastName AS cat_creatorLastName, categories_table.cat_modifiedByID, categories_table.cat_modifiedAt\r\nFROM categories_table \r\nINNER JOIN users_table ON categories_table.userID = users_table.userID\r\n", conn);
+            SqlCommand cmd = new SqlCommand("SELECT \r\ncategories_table.cat_ID, \r\ncategories_table.cat_name, \r\ncategories_table.cat_createdAt, \r\nusers_table.user_firstName + ' ' + users_table.user_lastName AS Created_by, \r\ncategories_table.cat_modifiedByID, \r\ncategories_table.cat_modifiedAt \r\nFROM categories_table \r\nINNER JOIN users_table ON categories_table.userID = users_table.userID", conn);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
 
@@ -103,7 +103,7 @@ namespace Joyice
                 da.Fill(dt);
                 if (dt.Rows.Count > 0)
                 {
-                    MessageBox.Show("Category already in exists.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Category already exists.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtCategory.Clear();
                     conn.Close();
                 }
@@ -117,7 +117,7 @@ namespace Joyice
                     conn.Close();
                     txtCategory.Clear();
 
-                    SqlCommand cmd3 = new SqlCommand("SELECT categories_table.cat_ID, categories_table.cat_name, categories_table.cat_createdAt, users_table.userID AS cat_createdByID, users_table.user_firstName as cat_creatorFirstName, users_table.user_lastName AS cat_creatorLastName, categories_table.cat_modifiedByID, categories_table.cat_modifiedAt\r\nFROM categories_table \r\nINNER JOIN users_table ON categories_table.userID = users_table.userID\r\n", conn);
+                    SqlCommand cmd3 = new SqlCommand("SELECT \r\ncategories_table.cat_ID, \r\ncategories_table.cat_name, \r\ncategories_table.cat_createdAt, \r\nusers_table.user_firstName + ' ' + users_table.user_lastName AS Created_by, \r\ncategories_table.cat_modifiedByID, \r\ncategories_table.cat_modifiedAt \r\nFROM categories_table \r\nINNER JOIN users_table ON categories_table.userID = users_table.userID", conn);
 
                     SqlDataAdapter da3 = new SqlDataAdapter(cmd3);
 
@@ -174,7 +174,7 @@ namespace Joyice
 
                 MessageBox.Show("Category Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                SqlCommand cmd2 = new SqlCommand("SELECT categories_table.cat_ID, categories_table.cat_name, categories_table.cat_createdAt, users_table.userID AS cat_createdByID, users_table.user_firstName as cat_creatorFirstName, users_table.user_lastName AS cat_creatorLastName, categories_table.cat_modifiedByID, categories_table.cat_modifiedAt\r\nFROM categories_table \r\nINNER JOIN users_table ON categories_table.userID = users_table.userID\r\n", conn);
+                SqlCommand cmd2 = new SqlCommand("SELECT \r\ncategories_table.cat_ID, \r\ncategories_table.cat_name, \r\ncategories_table.cat_createdAt, \r\nusers_table.user_firstName + ' ' + users_table.user_lastName AS Created_by, \r\ncategories_table.cat_modifiedByID, \r\ncategories_table.cat_modifiedAt \r\nFROM categories_table \r\nINNER JOIN users_table ON categories_table.userID = users_table.userID", conn);
 
                 SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
 
@@ -265,7 +265,7 @@ namespace Joyice
                         txtCategory.Clear();
 
 
-                        SqlCommand cmd2 = new SqlCommand("SELECT * FROM categories_table", conn);
+                        SqlCommand cmd2 = new SqlCommand("SELECT \r\ncategories_table.cat_ID, \r\ncategories_table.cat_name, \r\ncategories_table.cat_createdAt, \r\nusers_table.user_firstName + ' ' + users_table.user_lastName AS Created_by, \r\ncategories_table.cat_modifiedByID, \r\ncategories_table.cat_modifiedAt \r\nFROM categories_table \r\nINNER JOIN users_table ON categories_table.userID = users_table.userID", conn);
 
                         SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
 

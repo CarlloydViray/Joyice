@@ -50,31 +50,147 @@ namespace Joyice
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            Form passwordDialog = new Form();
+            TextBox txtPasswordDialogue = new TextBox();
+            Button btnOK = new Button();
+            Button btnCancelDialogue = new Button();
+            Label lblPassword = new Label();
 
-            btnCreate.Visible = false;
-            btnUpdate.Visible = false;
-            btnDelete.Visible = false;
-            btnCancel.Visible = true;
+            lblPassword.Text = "Enter Password";
+            passwordDialog.Text = "Confirm User";
+            txtPasswordDialogue.PasswordChar = '*';
+            txtPasswordDialogue.UseSystemPasswordChar = true;
+            btnOK.Text = "OK";
+            btnCancelDialogue.Text = "Cancel";
+            btnOK.DialogResult = DialogResult.OK;
+            btnCancelDialogue.DialogResult = DialogResult.Cancel;
 
-            btnInsert.Visible = true;
+            lblPassword.Location = new Point(10, 5);
+            lblPassword.Size = new Size(100, 20);
+            txtPasswordDialogue.Location = new Point(10, 25);
+            txtPasswordDialogue.Size = new Size(250, 50);
+            btnOK.Location = new Point(10, 50);
+            btnCancelDialogue.Location = new Point(90, 50);
 
-            txtCategory.Clear();
+            passwordDialog.ClientSize = new Size(275, 80);
+            passwordDialog.Controls.Add(lblPassword);
+            passwordDialog.Controls.Add(txtPasswordDialogue);
+            passwordDialog.Controls.Add(btnOK);
+            passwordDialog.Controls.Add(btnCancelDialogue);
 
-            dataGridView1.Enabled = false;
-            txtCategory.Enabled = true;
+            passwordDialog.FormBorderStyle = FormBorderStyle.FixedDialog;
+            passwordDialog.StartPosition = FormStartPosition.CenterScreen;
+            passwordDialog.AcceptButton = btnOK;
+            passwordDialog.CancelButton = btnCancelDialogue;
+
+            if (passwordDialog.ShowDialog() == DialogResult.OK)
+            {
+                string password = txtPasswordDialogue.Text;
+
+
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM users_table WHERE userID= '" + lblUserID.Text + "' AND password= '" + password + "'", conn);
+
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                {
+                    btnCreate.Visible = false;
+                    btnUpdate.Visible = false;
+                    btnDelete.Visible = false;
+                    btnCancel.Visible = true;
+
+                    btnInsert.Visible = true;
+
+                    txtCategory.Clear();
+
+                    dataGridView1.Enabled = false;
+                    txtCategory.Enabled = true;
+
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect Password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
 
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            btnCreate.Visible = false;
-            btnUpdate.Visible = false;
-            btnDelete.Visible = false;
-            btnCancel.Visible = true;
 
-            btnNewUpdate.Visible = true;
+            Form passwordDialog = new Form();
+            TextBox txtPasswordDialogue = new TextBox();
+            Button btnOK = new Button();
+            Button btnCancelDialogue = new Button();
+            Label lblPassword = new Label();
 
-            txtCategory.Enabled = true;
+            lblPassword.Text = "Enter Password";
+            passwordDialog.Text = "Confirm User";
+            txtPasswordDialogue.PasswordChar = '*';
+            txtPasswordDialogue.UseSystemPasswordChar = true;
+            btnOK.Text = "OK";
+            btnCancelDialogue.Text = "Cancel";
+            btnOK.DialogResult = DialogResult.OK;
+            btnCancelDialogue.DialogResult = DialogResult.Cancel;
+
+            lblPassword.Location = new Point(10, 5);
+            lblPassword.Size = new Size(100, 20);
+            txtPasswordDialogue.Location = new Point(10, 25);
+            txtPasswordDialogue.Size = new Size(250, 50);
+            btnOK.Location = new Point(10, 50);
+            btnCancelDialogue.Location = new Point(90, 50);
+
+            passwordDialog.ClientSize = new Size(275, 80);
+            passwordDialog.Controls.Add(lblPassword);
+            passwordDialog.Controls.Add(txtPasswordDialogue);
+            passwordDialog.Controls.Add(btnOK);
+            passwordDialog.Controls.Add(btnCancelDialogue);
+
+            passwordDialog.FormBorderStyle = FormBorderStyle.FixedDialog;
+            passwordDialog.StartPosition = FormStartPosition.CenterScreen;
+            passwordDialog.AcceptButton = btnOK;
+            passwordDialog.CancelButton = btnCancelDialogue;
+
+            if (passwordDialog.ShowDialog() == DialogResult.OK)
+            {
+                string password = txtPasswordDialogue.Text;
+
+
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM users_table WHERE userID= '" + lblUserID.Text + "' AND password= '" + password + "'", conn);
+
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                {
+                    btnCreate.Visible = false;
+                    btnUpdate.Visible = false;
+                    btnDelete.Visible = false;
+                    btnCancel.Visible = true;
+
+                    btnNewUpdate.Visible = true;
+
+                    txtCategory.Enabled = true;
+
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect Password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
 
         }
 
@@ -284,6 +400,11 @@ namespace Joyice
                     MessageBox.Show("Incorrect Password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

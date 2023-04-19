@@ -10,6 +10,7 @@ namespace Joyice
     {
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-91I62MI\\SQLEXPRESS;Initial Catalog=joyice;Integrated Security=True");
         DateTime currentDate = DateTime.Now;
+        String datagridQuery = "SELECT \r\n    categories_table.cat_ID, \r\n    categories_table.cat_name, \r\n\tSUM(products_table.prod_qty) AS products_under,\r\n    categories_table.cat_createdAt, \r\n    users_table.user_firstName + ' ' + users_table.user_lastName AS Created_by, \r\n    categories_table.cat_modifiedByID, \r\n    categories_table.cat_modifiedAt \r\nFROM \r\n    categories_table \r\n    INNER JOIN users_table ON categories_table.userID = users_table.userID\r\n    LEFT JOIN products_table ON categories_table.cat_ID = products_table.cat_ID\r\nGROUP BY \r\n    categories_table.cat_ID, \r\n    categories_table.cat_name, \r\n    categories_table.cat_createdAt, \r\n    users_table.user_firstName, \r\n    users_table.user_lastName, \r\n    categories_table.cat_modifiedByID, \r\n    categories_table.cat_modifiedAt\r\n\r\n";
 
         public string userIDValue { get; set; }
 
@@ -36,7 +37,7 @@ namespace Joyice
 
         private void ProductCategoryAdmin_Load(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("SELECT \r\ncategories_table.cat_ID, \r\ncategories_table.cat_name, \r\ncategories_table.cat_createdAt, \r\nusers_table.user_firstName + ' ' + users_table.user_lastName AS Created_by, \r\ncategories_table.cat_modifiedByID, \r\ncategories_table.cat_modifiedAt \r\nFROM categories_table \r\nINNER JOIN users_table ON categories_table.userID = users_table.userID", conn);
+            SqlCommand cmd = new SqlCommand(datagridQuery, conn);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
 
@@ -233,7 +234,7 @@ namespace Joyice
                     conn.Close();
                     txtCategory.Clear();
 
-                    SqlCommand cmd3 = new SqlCommand("SELECT \r\ncategories_table.cat_ID, \r\ncategories_table.cat_name, \r\ncategories_table.cat_createdAt, \r\nusers_table.user_firstName + ' ' + users_table.user_lastName AS Created_by, \r\ncategories_table.cat_modifiedByID, \r\ncategories_table.cat_modifiedAt \r\nFROM categories_table \r\nINNER JOIN users_table ON categories_table.userID = users_table.userID", conn);
+                    SqlCommand cmd3 = new SqlCommand(datagridQuery, conn);
 
                     SqlDataAdapter da3 = new SqlDataAdapter(cmd3);
 
@@ -290,7 +291,7 @@ namespace Joyice
 
                 MessageBox.Show("Category Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                SqlCommand cmd2 = new SqlCommand("SELECT \r\ncategories_table.cat_ID, \r\ncategories_table.cat_name, \r\ncategories_table.cat_createdAt, \r\nusers_table.user_firstName + ' ' + users_table.user_lastName AS Created_by, \r\ncategories_table.cat_modifiedByID, \r\ncategories_table.cat_modifiedAt \r\nFROM categories_table \r\nINNER JOIN users_table ON categories_table.userID = users_table.userID", conn);
+                SqlCommand cmd2 = new SqlCommand(datagridQuery, conn);
 
                 SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
 
@@ -367,37 +368,60 @@ namespace Joyice
 
                 if (dt.Rows.Count > 0)
                 {
-                    if (MessageBox.Show("Do you want to delete category?", "Delete data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (lblCatID.Text == string.Empty)
                     {
-                        conn.Open();
-                        SqlCommand cmd3 = new SqlCommand("DELETE categories_table WHERE cat_ID=@cat_ID", conn);
-
-
-                        cmd3.Parameters.AddWithValue("@cat_ID", lblCatID.Text);
-
-                        cmd3.ExecuteNonQuery();
-                        conn.Close();
-
-                        txtCategory.Clear();
-
-
-                        SqlCommand cmd2 = new SqlCommand("SELECT \r\ncategories_table.cat_ID, \r\ncategories_table.cat_name, \r\ncategories_table.cat_createdAt, \r\nusers_table.user_firstName + ' ' + users_table.user_lastName AS Created_by, \r\ncategories_table.cat_modifiedByID, \r\ncategories_table.cat_modifiedAt \r\nFROM categories_table \r\nINNER JOIN users_table ON categories_table.userID = users_table.userID", conn);
-
-                        SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
-
-                        DataTable dt2 = new DataTable();
-
-                        da2.Fill(dt2);
-                        dataGridView1.DataSource = dt2;
-
-                        MessageBox.Show("Category Deleted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        MessageBox.Show("Please select a category", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        lblCatID.Text = "";
                     }
+                    else
+                    {
+                        if (MessageBox.Show("Do you want to delete category?'" + lblCatID.Text + "'", "Delete data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            int catID = int.Parse(lblCatID.Text);
+                            conn.Open();
+                            SqlCommand cmd4 = new SqlCommand("SELECT COUNT(*) FROM products_table WHERE cat_ID =@cat_ID", conn);
+                            cmd4.Parameters.AddWithValue("@cat_ID", catID);
+                            int count = (int)cmd4.ExecuteScalar();
+                            conn.Close();
 
+                            if (count == 0)
+                            {
+                                conn.Open();
+                                SqlCommand cmd3 = new SqlCommand("DELETE categories_table WHERE cat_ID=@cat_ID", conn);
+
+
+                                cmd3.Parameters.AddWithValue("@cat_ID", lblCatID.Text);
+
+                                cmd3.ExecuteNonQuery();
+                                conn.Close();
+
+                                txtCategory.Clear();
+
+
+                                SqlCommand cmd2 = new SqlCommand(datagridQuery, conn);
+
+                                SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
+
+                                DataTable dt2 = new DataTable();
+
+                                da2.Fill(dt2);
+                                dataGridView1.DataSource = dt2;
+
+                                MessageBox.Show("Category Deleted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("There are products under that category", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                lblCatID.Text = "";
+                            }
+                        }
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Incorrect Password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    lblCatID.Text = "";
                 }
             }
 

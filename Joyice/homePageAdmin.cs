@@ -143,12 +143,8 @@ namespace Joyice
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            AdminEditAccount adminEditAccount = new AdminEditAccount()
-            {
-                TopLevel = false,
-                TopMost = true
-            };
-
+            AdminEditAccount adminEditAccount = new AdminEditAccount();
+            adminEditAccount.TopLevel = false;
             pnlScreen.Controls.Add(adminEditAccount);
             adminEditAccount.userIDValue = lbluserID.Text;
             adminEditAccount.Show();
@@ -167,6 +163,37 @@ namespace Joyice
             productsAdmin.BringToFront();
             productsAdmin.userIDValue = lbluserID.Text;
             productsAdmin.Show();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void icnbtnReports_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void icnBtnCustomers_Click(object sender, EventArgs e)
+        {
+            customerRegisterAdmin customerRegisterAdmin = new customerRegisterAdmin();
+            customerRegisterAdmin.TopLevel = false;
+            pnlScreen.Controls.Add(customerRegisterAdmin);
+            customerRegisterAdmin.BringToFront();
+            customerRegisterAdmin.userIDValue = lbluserID.Text;
+            customerRegisterAdmin.Show();
+
         }
     }
 }

@@ -73,14 +73,28 @@ namespace Joyice
                     SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
 
                     DataTable dt2 = new DataTable();
-                    da2.Fill(dt2);
 
+                    da2.Fill(dt2);
                     if (dt2.Rows.Count > 0)
                     {
+                        conn.Open();
+                        SqlCommand cmdID2 = new SqlCommand("SELECT userID FROM users_table WHERE username = @username AND password = @password", conn);
+                        cmdID2.Parameters.AddWithValue("@Username", txtUsername.Text);
+                        cmdID2.Parameters.AddWithValue("@Password", txtPassword.Text);
+                        SqlDataReader reader2 = cmd2.ExecuteReader();
 
-                        homePageStaff adminStaff = new homePageStaff();
-                        adminStaff.Show();
-                        this.Hide();
+
+                        if (reader2.Read())
+                        {
+                            userID = reader2.GetValue(0).ToString();
+
+                            homePageStaff homePageStaff = new homePageStaff();
+                            homePageStaff.userIDValue = userID;
+                            homePageStaff.Show();
+                            this.Hide();
+                        }
+                        reader2.Close();
+                        conn.Close();
                     }
                     else
                     {

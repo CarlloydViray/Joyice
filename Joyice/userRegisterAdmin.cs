@@ -129,10 +129,6 @@ namespace Joyice
                     MessageBox.Show("Incorrect Password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-
-
-
-
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

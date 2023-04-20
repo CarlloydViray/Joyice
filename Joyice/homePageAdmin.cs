@@ -121,7 +121,8 @@ namespace Joyice
             if (MessageBox.Show("Do you want to create database backup?", "Database Backup", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 conn.Open();
-                string fileName = "MyDatabase_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".bak";
+                string fileName = "MyDatabase_" + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + ".bak";
+                fileName = fileName.Replace("/", "-").Replace(":", ".");
                 string backupQuery = $"BACKUP DATABASE joyice TO DISK = '{backupDBFilePath}\\{fileName}'";
 
 
@@ -182,7 +183,11 @@ namespace Joyice
 
         private void icnbtnReports_Click(object sender, EventArgs e)
         {
-
+            reportsAdmin reportsAdmin = new reportsAdmin();
+            reportsAdmin.TopLevel = false;
+            pnlScreen.Controls.Add(reportsAdmin);
+            reportsAdmin.BringToFront();
+            reportsAdmin.Show();
         }
 
         private void icnBtnCustomers_Click(object sender, EventArgs e)

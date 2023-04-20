@@ -16,6 +16,9 @@ namespace Joyice
         public productsAdmin()
         {
             InitializeComponent();
+            txtProduct.TabIndex = 0;
+            cmProdCat.TabIndex = 1;
+            txtQty.TabIndex = 2;
 
         }
 
@@ -446,6 +449,11 @@ namespace Joyice
                     MessageBox.Show("Incorrect Password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+
+        }
+
+        private void cmProdCat_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

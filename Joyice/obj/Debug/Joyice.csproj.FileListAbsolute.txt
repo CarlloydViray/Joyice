@@ -43,3 +43,9 @@ C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\obj\Debug\Joyice.adminHome.re
 C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\obj\Debug\Joyice.productsAdmin.resources
 C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\obj\Debug\Joyice.homePageStaff.resources
 C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\obj\Debug\Joyice.customerRegisterAdmin.resources
+C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\obj\Debug\Joyice.customerOrdersStaff.resources
+C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\obj\Debug\Joyice.printOrdersStaff.resources
+C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\bin\Debug\itextsharp.dll
+C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\bin\Debug\itextsharp.xml
+C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\obj\Debug\Joyice.reportsAdmin.resources

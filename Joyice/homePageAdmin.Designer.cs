@@ -39,12 +39,12 @@
             this.icnbtnUsers = new FontAwesome.Sharp.IconButton();
             this.icnbtnProdCat = new FontAwesome.Sharp.IconButton();
             this.icnbtnProducts = new FontAwesome.Sharp.IconButton();
-            this.icnbtnReports = new FontAwesome.Sharp.IconButton();
             this.icnbtnBackup = new FontAwesome.Sharp.IconButton();
             this.icnbtnLogout = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.icnBtnCustomers = new FontAwesome.Sharp.IconButton();
+            this.icnbtnReports = new FontAwesome.Sharp.IconButton();
             this.pnlScreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -191,24 +191,6 @@
             this.icnbtnProducts.UseVisualStyleBackColor = true;
             this.icnbtnProducts.Click += new System.EventHandler(this.icnbtnProducts_Click);
             // 
-            // icnbtnReports
-            // 
-            this.icnbtnReports.FlatAppearance.BorderSize = 0;
-            this.icnbtnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.icnbtnReports.ForeColor = System.Drawing.Color.White;
-            this.icnbtnReports.IconChar = FontAwesome.Sharp.IconChar.FileContract;
-            this.icnbtnReports.IconColor = System.Drawing.Color.White;
-            this.icnbtnReports.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.icnbtnReports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.icnbtnReports.Location = new System.Drawing.Point(2, 702);
-            this.icnbtnReports.Name = "icnbtnReports";
-            this.icnbtnReports.Size = new System.Drawing.Size(197, 72);
-            this.icnbtnReports.TabIndex = 31;
-            this.icnbtnReports.Text = "REPORTS";
-            this.icnbtnReports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.icnbtnReports.UseVisualStyleBackColor = true;
-            this.icnbtnReports.Click += new System.EventHandler(this.icnbtnReports_Click);
-            // 
             // icnbtnBackup
             // 
             this.icnbtnBackup.FlatAppearance.BorderSize = 0;
@@ -300,6 +282,24 @@
             this.icnBtnCustomers.UseVisualStyleBackColor = true;
             this.icnBtnCustomers.Click += new System.EventHandler(this.icnBtnCustomers_Click);
             // 
+            // icnbtnReports
+            // 
+            this.icnbtnReports.FlatAppearance.BorderSize = 0;
+            this.icnbtnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icnbtnReports.ForeColor = System.Drawing.Color.White;
+            this.icnbtnReports.IconChar = FontAwesome.Sharp.IconChar.FileContract;
+            this.icnbtnReports.IconColor = System.Drawing.Color.White;
+            this.icnbtnReports.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icnbtnReports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.icnbtnReports.Location = new System.Drawing.Point(2, 702);
+            this.icnbtnReports.Name = "icnbtnReports";
+            this.icnbtnReports.Size = new System.Drawing.Size(197, 72);
+            this.icnbtnReports.TabIndex = 31;
+            this.icnbtnReports.Text = "REPORTS";
+            this.icnbtnReports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.icnbtnReports.UseVisualStyleBackColor = true;
+            this.icnbtnReports.Click += new System.EventHandler(this.icnbtnReports_Click);
+            // 
             // homePageAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,11 +338,11 @@
         private FontAwesome.Sharp.IconButton icnbtnUsers;
         private FontAwesome.Sharp.IconButton icnbtnProdCat;
         private FontAwesome.Sharp.IconButton icnbtnProducts;
-        private FontAwesome.Sharp.IconButton icnbtnReports;
         private FontAwesome.Sharp.IconButton icnbtnBackup;
         private FontAwesome.Sharp.IconButton icnbtnLogout;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton icnBtnCustomers;
+        private FontAwesome.Sharp.IconButton icnbtnReports;
     }
 }

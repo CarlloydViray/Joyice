@@ -18,6 +18,19 @@ namespace Joyice
         {
             InitializeComponent();
 
+            txtFirstName.TabIndex = 0;
+            txtLastName.TabIndex = 1;
+            rdMale.TabIndex = 2;
+            rdFemale.TabIndex = 3;
+            dtpBday.TabIndex = 4;
+            txtAddress.TabIndex = 5;
+            txtContactNumber.TabIndex = 6;
+            txtEmail.TabIndex = 7;
+            cmUserType.TabIndex = 8;
+            txtUsername.TabIndex = 9;
+            txtPassword.TabIndex = 10;
+            txtRePassword.TabIndex = 11;
+
         }
 
 

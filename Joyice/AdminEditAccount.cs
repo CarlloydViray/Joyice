@@ -24,6 +24,11 @@ namespace Joyice
         public AdminEditAccount()
         {
             InitializeComponent();
+            txtEmail.TabIndex = 0;
+            txtContactNumber.TabIndex = 1;
+            txtUsername.TabIndex = 2;
+            txtPassword.TabIndex = 3;
+            txtRePassword.TabIndex = 4;
         }
 
         private void AdminEditAccount_Load(object sender, EventArgs e)
@@ -302,6 +307,11 @@ namespace Joyice
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
         {
 
         }

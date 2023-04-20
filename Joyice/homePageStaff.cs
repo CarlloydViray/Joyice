@@ -80,5 +80,25 @@ namespace Joyice
             productsAdmin.userIDValue = lbluserID.Text;
             productsAdmin.Show();
         }
+
+        private void icnbtnProdCat_Click(object sender, EventArgs e)
+        {
+            customerOrdersStaff customerOrdersStaff = new customerOrdersStaff();
+            customerOrdersStaff.TopLevel = false;
+            pnlScreen.Controls.Add(customerOrdersStaff);
+            customerOrdersStaff.BringToFront();
+            customerOrdersStaff.userIDValue = lbluserID.Text;
+            customerOrdersStaff.Show();
+        }
+
+        private void icnbtnReports_Click(object sender, EventArgs e)
+        {
+            printOrdersStaff printOrdersStaff = new printOrdersStaff();
+            printOrdersStaff.TopLevel = false;
+            pnlScreen.Controls.Add(printOrdersStaff);
+            printOrdersStaff.BringToFront();
+            printOrdersStaff.Show();
+
+        }
     }
 }

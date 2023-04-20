@@ -14,6 +14,10 @@ namespace Joyice
         public customerRegisterAdmin()
         {
             InitializeComponent();
+            txtName.TabIndex = 0;
+            txtAddress.TabIndex = 1;
+            txtEmail.TabIndex = 2;
+            txtContactNumber.TabIndex = 3;
         }
 
         private void txtContactNumber_KeyPress(object sender, KeyPressEventArgs e)
@@ -207,8 +211,6 @@ namespace Joyice
                     txtEmail.Enabled = false;
                 }
             }
-
-
         }
 
         private void btnUpdate_Click(object sender, System.EventArgs e)

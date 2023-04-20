@@ -167,6 +167,7 @@
             this.txtEmail.Size = new System.Drawing.Size(262, 20);
             this.txtEmail.TabIndex = 40;
             this.txtEmail.Visible = false;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtContactNumber
             // 

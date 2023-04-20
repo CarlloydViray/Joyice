@@ -4,6 +4,7 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
@@ -68,8 +69,9 @@ namespace Joyice
                     {
                         string fileName = $"Order_{txtID.Text}_{DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}.pdf";
                         fileName = fileName.Replace("/", "-").Replace(":", ".");
+                        string fullPath = $"{ordersPDFpath}/{fileName}";
 
-                        PdfWriter.GetInstance(document, new FileStream($"{ordersPDFpath}/{fileName}", FileMode.Create));
+                        PdfWriter.GetInstance(document, new FileStream(fullPath, FileMode.Create));
 
                         document.Open();
 
@@ -121,8 +123,10 @@ namespace Joyice
 
                         document.Close();
 
-                        MessageBox.Show($"{fileName} created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        if (MessageBox.Show($"{fileName} created! Do you want to open PDF?", "Open PDF", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            Process.Start(fullPath);
+                        }
 
                     }
                     catch (Exception ex)

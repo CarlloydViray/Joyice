@@ -13,7 +13,7 @@ namespace Joyice
 
     public partial class AdminEditAccount : Form
     {
-
+        //comment
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-91I62MI\\SQLEXPRESS;Initial Catalog=joyice;Integrated Security=True");
 
         string imgPath = ConfigurationManager.AppSettings["imgFilePath"];

@@ -10,6 +10,8 @@ namespace Joyice
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-91I62MI\\SQLEXPRESS;Initial Catalog=joyice;Integrated Security=True");
         string backupDBFilePath = ConfigurationManager.AppSettings["backupDBFilePath"];
         string imgPath = ConfigurationManager.AppSettings["imgFilePath"];
+        string assetsPath = ConfigurationManager.AppSettings["assetsPath"];
+        string defaultProfilePic = ConfigurationManager.AppSettings["defaultProfilePic"];
 
         public string userIDValue { get; set; }
         public homePageStaff()
@@ -51,7 +53,7 @@ namespace Joyice
                 {
                     if (reader["user_profilePic"].ToString() == string.Empty)
                     {
-                        pictureBox1.ImageLocation = $"{imgPath}\\default.jpg";
+                        pictureBox1.ImageLocation = defaultProfilePic;
                     }
                     else
                     {
@@ -60,6 +62,11 @@ namespace Joyice
                 }
             }
             conn.Close();
+
+            pbProjManager.ImageLocation = $"{assetsPath}//ProjectManager.jpg";
+            pbUI.ImageLocation = $"{assetsPath}//UI.jpg";
+            pbUX.ImageLocation = $"{assetsPath}//UX.jpg";
+            pbProgrammer.ImageLocation = $"{assetsPath}//Programmer.jpg";
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -98,6 +105,21 @@ namespace Joyice
             pnlScreen.Controls.Add(printOrdersStaff);
             printOrdersStaff.BringToFront();
             printOrdersStaff.Show();
+
+        }
+
+        private void icnbtnClose_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void icnbtnMin_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
         }
     }

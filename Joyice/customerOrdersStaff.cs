@@ -56,6 +56,7 @@ namespace Joyice
             DataTable dt4 = new DataTable();
             da4.Fill(dt4);
             dataGridView2.DataSource = dt4;
+            conn.Close();
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -97,7 +98,7 @@ namespace Joyice
             {
                 string password = txtPasswordDialogue.Text;
 
-
+                conn.Open();
 
                 SqlCommand cmd = new SqlCommand("SELECT * FROM users_table WHERE userID= '" + lblUserID.Text + "' AND password= '" + password + "'", conn);
 
@@ -121,11 +122,13 @@ namespace Joyice
                     dataGridView1.Enabled = false;
 
                     txtQty.Clear();
+                    conn.Close();
 
                 }
                 else
                 {
                     MessageBox.Show("Incorrect Password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    conn.Close();
                 }
             }
         }
@@ -146,6 +149,7 @@ namespace Joyice
             }
             else
             {
+                conn.Open();
                 SqlCommand cmd5 = new SqlCommand("SELECT prod_qty FROM products_table WHERE prod_ID = @prod_ID", conn);
 
                 cmd5.Parameters.AddWithValue("@prod_ID", cmProduct.SelectedValue);
@@ -207,7 +211,9 @@ namespace Joyice
                 else
                 {
                     MessageBox.Show("Insufficient product quantity", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    conn.Close();
                 }
+                conn.Close();
             }
         }
 

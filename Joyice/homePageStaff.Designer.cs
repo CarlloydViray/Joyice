@@ -31,20 +31,47 @@
             this.lbluserID = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.icnbtnMin = new FontAwesome.Sharp.IconButton();
+            this.icnbtnClose = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.icnbtnProdCat = new FontAwesome.Sharp.IconButton();
             this.icnbtnLogout = new FontAwesome.Sharp.IconButton();
+            this.icnbtnReports = new FontAwesome.Sharp.IconButton();
             this.icnbtnProducts = new FontAwesome.Sharp.IconButton();
             this.icnbtnHome = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnlScreen = new System.Windows.Forms.Panel();
-            this.icnbtnReports = new FontAwesome.Sharp.IconButton();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pbProgrammer = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pbUX = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pbUI = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pbProjManager = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnlScreen.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProgrammer)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUX)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUI)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProjManager)).BeginInit();
             this.SuspendLayout();
             // 
             // lbluserID
@@ -60,11 +87,39 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
+            this.panel2.Controls.Add(this.icnbtnMin);
+            this.panel2.Controls.Add(this.icnbtnClose);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1461, 40);
+            this.panel2.Size = new System.Drawing.Size(1477, 40);
             this.panel2.TabIndex = 34;
+            // 
+            // icnbtnMin
+            // 
+            this.icnbtnMin.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.icnbtnMin.IconColor = System.Drawing.Color.Black;
+            this.icnbtnMin.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icnbtnMin.IconSize = 20;
+            this.icnbtnMin.Location = new System.Drawing.Point(1409, 6);
+            this.icnbtnMin.Name = "icnbtnMin";
+            this.icnbtnMin.Size = new System.Drawing.Size(25, 28);
+            this.icnbtnMin.TabIndex = 4;
+            this.icnbtnMin.UseVisualStyleBackColor = true;
+            this.icnbtnMin.Click += new System.EventHandler(this.icnbtnMin_Click);
+            // 
+            // icnbtnClose
+            // 
+            this.icnbtnClose.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            this.icnbtnClose.IconColor = System.Drawing.Color.Black;
+            this.icnbtnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icnbtnClose.IconSize = 20;
+            this.icnbtnClose.Location = new System.Drawing.Point(1440, 6);
+            this.icnbtnClose.Name = "icnbtnClose";
+            this.icnbtnClose.Size = new System.Drawing.Size(25, 28);
+            this.icnbtnClose.TabIndex = 3;
+            this.icnbtnClose.UseVisualStyleBackColor = true;
+            this.icnbtnClose.Click += new System.EventHandler(this.icnbtnClose_Click);
             // 
             // iconButton1
             // 
@@ -91,6 +146,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel1
             // 
@@ -105,7 +161,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 979);
+            this.panel1.Size = new System.Drawing.Size(200, 1018);
             this.panel1.TabIndex = 33;
             // 
             // icnbtnProdCat
@@ -143,6 +199,24 @@
             this.icnbtnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.icnbtnLogout.UseVisualStyleBackColor = true;
             this.icnbtnLogout.Click += new System.EventHandler(this.icnbtnLogout_Click);
+            // 
+            // icnbtnReports
+            // 
+            this.icnbtnReports.FlatAppearance.BorderSize = 0;
+            this.icnbtnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icnbtnReports.ForeColor = System.Drawing.Color.White;
+            this.icnbtnReports.IconChar = FontAwesome.Sharp.IconChar.FileContract;
+            this.icnbtnReports.IconColor = System.Drawing.Color.White;
+            this.icnbtnReports.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icnbtnReports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.icnbtnReports.Location = new System.Drawing.Point(2, 570);
+            this.icnbtnReports.Name = "icnbtnReports";
+            this.icnbtnReports.Size = new System.Drawing.Size(197, 72);
+            this.icnbtnReports.TabIndex = 31;
+            this.icnbtnReports.Text = "PRINT ORDERS";
+            this.icnbtnReports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.icnbtnReports.UseVisualStyleBackColor = true;
+            this.icnbtnReports.Click += new System.EventHandler(this.icnbtnReports_Click);
             // 
             // icnbtnProducts
             // 
@@ -189,52 +263,202 @@
             this.label1.TabIndex = 32;
             this.label1.Text = "Home";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(144, 405);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1221, 76);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "WELCOME JOYICE STAFF MESSAGE";
-            // 
             // pnlScreen
             // 
             this.pnlScreen.BackColor = System.Drawing.Color.Transparent;
+            this.pnlScreen.Controls.Add(this.panel6);
+            this.pnlScreen.Controls.Add(this.panel5);
+            this.pnlScreen.Controls.Add(this.panel4);
+            this.pnlScreen.Controls.Add(this.panel3);
             this.pnlScreen.Controls.Add(this.label2);
             this.pnlScreen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlScreen.ForeColor = System.Drawing.Color.White;
             this.pnlScreen.Location = new System.Drawing.Point(200, 40);
             this.pnlScreen.Name = "pnlScreen";
-            this.pnlScreen.Size = new System.Drawing.Size(1461, 939);
+            this.pnlScreen.Size = new System.Drawing.Size(1477, 978);
             this.pnlScreen.TabIndex = 35;
             this.pnlScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlScreen_Paint);
             // 
-            // icnbtnReports
+            // panel6
             // 
-            this.icnbtnReports.FlatAppearance.BorderSize = 0;
-            this.icnbtnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.icnbtnReports.ForeColor = System.Drawing.Color.White;
-            this.icnbtnReports.IconChar = FontAwesome.Sharp.IconChar.FileContract;
-            this.icnbtnReports.IconColor = System.Drawing.Color.White;
-            this.icnbtnReports.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.icnbtnReports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.icnbtnReports.Location = new System.Drawing.Point(2, 570);
-            this.icnbtnReports.Name = "icnbtnReports";
-            this.icnbtnReports.Size = new System.Drawing.Size(197, 72);
-            this.icnbtnReports.TabIndex = 31;
-            this.icnbtnReports.Text = "PRINT ORDERS";
-            this.icnbtnReports.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.icnbtnReports.UseVisualStyleBackColor = true;
-            this.icnbtnReports.Click += new System.EventHandler(this.icnbtnReports_Click);
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.panel6.Controls.Add(this.label10);
+            this.panel6.Controls.Add(this.label6);
+            this.panel6.Controls.Add(this.pbProgrammer);
+            this.panel6.Location = new System.Drawing.Point(1128, 297);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(317, 402);
+            this.panel6.TabIndex = 5;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label10.Location = new System.Drawing.Point(58, 320);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(214, 31);
+            this.label10.TabIndex = 41;
+            this.label10.Text = "PROGRAMMER";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label6.Location = new System.Drawing.Point(74, 268);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(183, 31);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "Carlloyd Viray";
+            // 
+            // pbProgrammer
+            // 
+            this.pbProgrammer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbProgrammer.Location = new System.Drawing.Point(18, 13);
+            this.pbProgrammer.Name = "pbProgrammer";
+            this.pbProgrammer.Size = new System.Drawing.Size(288, 232);
+            this.pbProgrammer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbProgrammer.TabIndex = 39;
+            this.pbProgrammer.TabStop = false;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.pbUX);
+            this.panel5.Location = new System.Drawing.Point(763, 297);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(317, 402);
+            this.panel5.TabIndex = 6;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label9.Location = new System.Drawing.Point(57, 320);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(202, 31);
+            this.label9.TabIndex = 40;
+            this.label9.Text = "UX DESIGNER";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label5.Location = new System.Drawing.Point(57, 268);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(206, 31);
+            this.label5.TabIndex = 39;
+            this.label5.Text = "Kyle Manansala";
+            // 
+            // pbUX
+            // 
+            this.pbUX.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbUX.Location = new System.Drawing.Point(16, 13);
+            this.pbUX.Name = "pbUX";
+            this.pbUX.Size = new System.Drawing.Size(288, 232);
+            this.pbUX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbUX.TabIndex = 38;
+            this.pbUX.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.panel4.Controls.Add(this.label8);
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.pbUI);
+            this.panel4.Location = new System.Drawing.Point(398, 297);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(317, 402);
+            this.panel4.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label8.Location = new System.Drawing.Point(63, 320);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(192, 31);
+            this.label8.TabIndex = 39;
+            this.label8.Text = "UI DESIGNER";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label4.Location = new System.Drawing.Point(46, 268);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(226, 31);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "John Azriel Perez";
+            // 
+            // pbUI
+            // 
+            this.pbUI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbUI.Location = new System.Drawing.Point(15, 13);
+            this.pbUI.Name = "pbUI";
+            this.pbUI.Size = new System.Drawing.Size(288, 232);
+            this.pbUI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbUI.TabIndex = 37;
+            this.pbUI.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.pbProjManager);
+            this.panel3.Location = new System.Drawing.Point(33, 297);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(317, 402);
+            this.panel3.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label7.Location = new System.Drawing.Point(14, 320);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(286, 31);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "PROJECT MANAGER";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label3.Location = new System.Drawing.Point(24, 268);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(261, 31);
+            this.label3.TabIndex = 37;
+            this.label3.Text = "Ryan Dave Songalla";
+            // 
+            // pbProjManager
+            // 
+            this.pbProjManager.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbProjManager.Location = new System.Drawing.Point(14, 13);
+            this.pbProjManager.Name = "pbProjManager";
+            this.pbProjManager.Size = new System.Drawing.Size(288, 232);
+            this.pbProjManager.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbProjManager.TabIndex = 36;
+            this.pbProjManager.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(52, 192);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1382, 63);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "JoyIce Inventory Management System Developers Team";
             // 
             // homePageStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1661, 979);
+            this.ClientSize = new System.Drawing.Size(1677, 1018);
             this.ControlBox = false;
             this.Controls.Add(this.pnlScreen);
             this.Controls.Add(this.lbluserID);
@@ -246,10 +470,23 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "homePageStaff";
             this.Load += new System.EventHandler(this.homePageStaff_Load);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.pnlScreen.ResumeLayout(false);
             this.pnlScreen.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProgrammer)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUX)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUI)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProjManager)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,8 +504,26 @@
         private FontAwesome.Sharp.IconButton icnbtnProducts;
         private FontAwesome.Sharp.IconButton icnbtnHome;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel pnlScreen;
         private FontAwesome.Sharp.IconButton icnbtnReports;
+        private FontAwesome.Sharp.IconButton icnbtnMin;
+        private FontAwesome.Sharp.IconButton icnbtnClose;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pbProgrammer;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pbUX;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pbUI;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pbProjManager;
+        private System.Windows.Forms.Label label2;
     }
 }

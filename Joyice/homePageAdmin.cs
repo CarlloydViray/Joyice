@@ -10,6 +10,8 @@ namespace Joyice
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-91I62MI\\SQLEXPRESS;Initial Catalog=joyice;Integrated Security=True");
         string backupDBFilePath = ConfigurationManager.AppSettings["backupDBFilePath"];
         string imgPath = ConfigurationManager.AppSettings["imgFilePath"];
+        string defaultProfilePic = ConfigurationManager.AppSettings["defaultProfilePic"];
+        string assetsPath = ConfigurationManager.AppSettings["assetsPath"];
 
         DateTime currentTime = DateTime.Now;
 
@@ -33,7 +35,7 @@ namespace Joyice
                 {
                     if (reader["user_profilePic"].ToString() == string.Empty)
                     {
-                        pictureBox1.ImageLocation = $"{imgPath}\\default.jpg";
+                        pictureBox1.ImageLocation = defaultProfilePic;
                     }
                     else
                     {
@@ -43,6 +45,10 @@ namespace Joyice
             }
             conn.Close();
 
+            pbProjManager.ImageLocation = $"{assetsPath}//ProjectManager.jpg";
+            pbUI.ImageLocation = $"{assetsPath}//UI.jpg";
+            pbUX.ImageLocation = $"{assetsPath}//UX.jpg";
+            pbProgrammer.ImageLocation = $"{assetsPath}//Programmer.jpg";
 
         }
 
@@ -132,6 +138,9 @@ namespace Joyice
 
                 MessageBox.Show($"{fileName} created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+
+
         }
 
         private void icnbtnLogout_Click(object sender, EventArgs e)
@@ -199,6 +208,16 @@ namespace Joyice
             customerRegisterAdmin.userIDValue = lbluserID.Text;
             customerRegisterAdmin.Show();
 
+        }
+
+        private void icnbtnMin_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void icnbtnClose_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

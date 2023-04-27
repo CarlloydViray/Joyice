@@ -18,6 +18,12 @@ namespace Joyice
         {
             InitializeComponent();
 
+            txtUsername.TabIndex = 0;
+            txtPassword.TabIndex = 1;
+            btnLogin.TabIndex = 2;
+            iconButton1.TabIndex = 3;
+            iconButton2.TabIndex = 4;
+
         }
 
 
@@ -111,6 +117,16 @@ namespace Joyice
         private void login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -48,7 +48,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtRePassword = new System.Windows.Forms.TextBox();
             this.lblRetypePassword = new System.Windows.Forms.Label();
-            this.lblPicName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -253,18 +252,6 @@
             this.lblRetypePassword.Text = "Retype Password: ";
             this.lblRetypePassword.Visible = false;
             // 
-            // lblPicName
-            // 
-            this.lblPicName.AutoSize = true;
-            this.lblPicName.ForeColor = System.Drawing.Color.Black;
-            this.lblPicName.Location = new System.Drawing.Point(803, 427);
-            this.lblPicName.Name = "lblPicName";
-            this.lblPicName.Size = new System.Drawing.Size(60, 13);
-            this.lblPicName.TabIndex = 52;
-            this.lblPicName.Text = "lblPicName";
-            this.lblPicName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblPicName.Visible = false;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
@@ -290,10 +277,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(1477, 978);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblPicName);
             this.Controls.Add(this.txtRePassword);
             this.Controls.Add(this.lblRetypePassword);
             this.Controls.Add(this.txtPassword);
@@ -348,7 +335,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtRePassword;
         private System.Windows.Forms.Label lblRetypePassword;
-        private System.Windows.Forms.Label lblPicName;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
     }

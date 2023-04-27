@@ -417,6 +417,14 @@ namespace Joyice
                     if (MessageBox.Show("Do you want to delete customer?", "Delete data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         conn.Open();
+
+                        SqlCommand cmd4 = new SqlCommand("DELETE orders_table WHERE cus_ID=@cus_ID", conn);
+
+
+                        cmd4.Parameters.AddWithValue("@cus_ID", lblId.Text);
+
+                        cmd4.ExecuteNonQuery();
+
                         SqlCommand cmd3 = new SqlCommand("DELETE customers_table WHERE cus_ID=@cus_ID", conn);
 
 

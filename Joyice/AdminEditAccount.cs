@@ -13,10 +13,11 @@ namespace Joyice
 
     public partial class AdminEditAccount : Form
     {
-        //comment
+
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-91I62MI\\SQLEXPRESS;Initial Catalog=joyice;Integrated Security=True");
 
         string imgPath = ConfigurationManager.AppSettings["imgFilePath"];
+        string defaultProfilePic = ConfigurationManager.AppSettings["defaultProfilePic"];
 
 
         public string userIDValue { get; set; }
@@ -50,7 +51,7 @@ namespace Joyice
                     txtPassword.Text = reader["password"].ToString();
                     if (reader["user_profilePic"].ToString() == string.Empty)
                     {
-                        pictureBox1.ImageLocation = imgPath + "\\default.jpg"; ;
+                        pictureBox1.ImageLocation = defaultProfilePic;
                     }
                     else
                     {
@@ -133,7 +134,6 @@ namespace Joyice
                     txtRePassword.Visible = true;
                     txtPassword.Enabled = true;
                     lblRetypePassword.Visible = true;
-                    lblPicName.Visible = true;
 
                     SqlCommand cmd2 = new SqlCommand("SELECT * FROM users_table WHERE userID= '" + lblUserID.Text + "'", conn);
 
@@ -148,7 +148,6 @@ namespace Joyice
                             txtUsername.Text = reader["username"].ToString();
 
                             string filePath = reader["user_profilePic"].ToString();
-                            lblPicName.Text = Path.GetFileName(filePath);
 
                         }
                     }
@@ -177,7 +176,6 @@ namespace Joyice
             {
                 imglocation = openFileDialog.FileName.ToString();
                 pictureBox1.ImageLocation = imglocation;
-                lblPicName.Text = Path.GetFileName(imglocation);
             }
         }
 
@@ -253,7 +251,7 @@ namespace Joyice
                     txtPassword.Enabled = false;
                     txtRePassword.Visible = false;
                     lblRetypePassword.Visible = false;
-                    lblPicName.Visible = false;
+
                 }
 
             }
@@ -278,7 +276,6 @@ namespace Joyice
             txtRePassword.Visible = false;
             lblRetypePassword.Visible = false;
             txtPassword.Enabled = false;
-            lblPicName.Visible = false;
 
 
             SqlCommand cmd = new SqlCommand("SELECT * FROM users_table WHERE userID= '" + lblUserID.Text + "'", conn);
@@ -294,11 +291,6 @@ namespace Joyice
                     pictureBox1.ImageLocation = reader["user_profilePic"].ToString();
 
                     string filePath = reader["user_profilePic"].ToString();
-                    lblPicName.Text = Path.GetFileName(filePath);
-
-
-
-
                 }
             }
             conn.Close();
@@ -315,6 +307,9 @@ namespace Joyice
         {
 
         }
+
+
+
     }
 
 }

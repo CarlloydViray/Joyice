@@ -28,68 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lblCatID = new System.Windows.Forms.Label();
-            this.lblUserID = new System.Windows.Forms.Label();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1477, 58);
-            this.panel1.TabIndex = 115;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.panel2.Controls.Add(this.pbLogo);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(37, 22);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1402, 933);
+            this.panel2.TabIndex = 116;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // label12
+            // label4
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(12, 21);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(45, 17);
-            this.label12.TabIndex = 54;
-            this.label12.Text = "Home";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(51, 805);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(621, 62);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "To become the most loved and \r\nnumber 1 ice cream brand in the entire Philippines" +
+    ".";
             // 
-            // lblCatID
+            // label3
             // 
-            this.lblCatID.AutoSize = true;
-            this.lblCatID.Location = new System.Drawing.Point(1431, 941);
-            this.lblCatID.Name = "lblCatID";
-            this.lblCatID.Size = new System.Drawing.Size(34, 13);
-            this.lblCatID.TabIndex = 114;
-            this.lblCatID.Text = "CatID";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(50, 637);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(800, 62);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "To provide our customers with the enjoyment \r\nand ultimate ice cream experience a" +
+    "nd to promote quality service.";
             // 
-            // lblUserID
+            // label2
             // 
-            this.lblUserID.AutoSize = true;
-            this.lblUserID.Location = new System.Drawing.Point(1374, 941);
-            this.lblUserID.Name = "lblUserID";
-            this.lblUserID.Size = new System.Drawing.Size(38, 13);
-            this.lblUserID.TabIndex = 113;
-            this.lblUserID.Text = "userID";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(51, 761);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 31);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Vision";
             // 
-            // iconPictureBox1
+            // label1
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.HomeUser;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 430;
-            this.iconPictureBox1.Location = new System.Drawing.Point(483, 239);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(475, 430);
-            this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.iconPictureBox1.TabIndex = 116;
-            this.iconPictureBox1.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(51, 600);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 31);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mission";
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Location = new System.Drawing.Point(488, 54);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(487, 492);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 4;
+            this.pbLogo.TabStop = false;
             // 
             // adminHome
             // 
@@ -97,27 +113,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1477, 978);
             this.ControlBox = false;
-            this.Controls.Add(this.iconPictureBox1);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblCatID);
-            this.Controls.Add(this.lblUserID);
+            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "adminHome";
             this.Text = "adminHome";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.adminHome_Load);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label lblCatID;
-        private System.Windows.Forms.Label lblUserID;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pbLogo;
     }
 }

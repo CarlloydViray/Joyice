@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -51,6 +51,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtOverall = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -120,7 +122,7 @@
             // 
             this.txtQty.Enabled = false;
             this.txtQty.ForeColor = System.Drawing.Color.Black;
-            this.txtQty.Location = new System.Drawing.Point(582, 234);
+            this.txtQty.Location = new System.Drawing.Point(582, 225);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(253, 20);
             this.txtQty.TabIndex = 164;
@@ -129,7 +131,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(530, 237);
+            this.label7.Location = new System.Drawing.Point(530, 232);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 13);
             this.label7.TabIndex = 163;
@@ -139,7 +141,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(532, 206);
+            this.label5.Location = new System.Drawing.Point(532, 204);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 162;
@@ -149,7 +151,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(494, 175);
+            this.label1.Location = new System.Drawing.Point(494, 176);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 161;
@@ -170,33 +172,33 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(12, 473);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Size = new System.Drawing.Size(1453, 488);
             this.dataGridView1.TabIndex = 166;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -206,7 +208,7 @@
             // 
             this.txtCusName.Enabled = false;
             this.txtCusName.ForeColor = System.Drawing.Color.Black;
-            this.txtCusName.Location = new System.Drawing.Point(582, 172);
+            this.txtCusName.Location = new System.Drawing.Point(582, 169);
             this.txtCusName.Name = "txtCusName";
             this.txtCusName.Size = new System.Drawing.Size(253, 20);
             this.txtCusName.TabIndex = 178;
@@ -215,7 +217,7 @@
             // 
             this.txtProd.Enabled = false;
             this.txtProd.ForeColor = System.Drawing.Color.Black;
-            this.txtProd.Location = new System.Drawing.Point(582, 203);
+            this.txtProd.Location = new System.Drawing.Point(582, 197);
             this.txtProd.Name = "txtProd";
             this.txtProd.Size = new System.Drawing.Size(253, 20);
             this.txtProd.TabIndex = 179;
@@ -224,7 +226,7 @@
             // 
             this.txtMadeBy.Enabled = false;
             this.txtMadeBy.ForeColor = System.Drawing.Color.Black;
-            this.txtMadeBy.Location = new System.Drawing.Point(582, 296);
+            this.txtMadeBy.Location = new System.Drawing.Point(582, 309);
             this.txtMadeBy.Name = "txtMadeBy";
             this.txtMadeBy.Size = new System.Drawing.Size(253, 20);
             this.txtMadeBy.TabIndex = 185;
@@ -233,7 +235,7 @@
             // 
             this.txtDate.Enabled = false;
             this.txtDate.ForeColor = System.Drawing.Color.Black;
-            this.txtDate.Location = new System.Drawing.Point(582, 265);
+            this.txtDate.Location = new System.Drawing.Point(582, 281);
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(253, 20);
             this.txtDate.TabIndex = 184;
@@ -242,7 +244,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(490, 299);
+            this.label3.Location = new System.Drawing.Point(490, 316);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 13);
             this.label3.TabIndex = 181;
@@ -252,7 +254,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(519, 268);
+            this.label4.Location = new System.Drawing.Point(519, 288);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 180;
@@ -271,11 +273,30 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(529, 144);
+            this.label2.Location = new System.Drawing.Point(529, 148);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 186;
             this.label2.Text = "Order ID";
+            // 
+            // txtOverall
+            // 
+            this.txtOverall.Enabled = false;
+            this.txtOverall.ForeColor = System.Drawing.Color.Black;
+            this.txtOverall.Location = new System.Drawing.Point(582, 253);
+            this.txtOverall.Name = "txtOverall";
+            this.txtOverall.Size = new System.Drawing.Size(253, 20);
+            this.txtOverall.TabIndex = 189;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(481, 260);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 13);
+            this.label6.TabIndex = 188;
+            this.label6.Text = "Overall Price (Php)";
             // 
             // printOrdersStaff
             // 
@@ -283,6 +304,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1477, 978);
             this.ControlBox = false;
+            this.Controls.Add(this.txtOverall);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMadeBy);
@@ -335,5 +358,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtOverall;
+        private System.Windows.Forms.Label label6;
     }
 }

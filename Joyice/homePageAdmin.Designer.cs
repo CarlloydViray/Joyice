@@ -237,7 +237,7 @@
             this.icnbtnBackup.Name = "icnbtnBackup";
             this.icnbtnBackup.Size = new System.Drawing.Size(197, 72);
             this.icnbtnBackup.TabIndex = 32;
-            this.icnbtnBackup.Text = "DATABASE BACKUP";
+            this.icnbtnBackup.Text = "DATABASE BACKUP | RESTORE";
             this.icnbtnBackup.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.icnbtnBackup.UseVisualStyleBackColor = true;
             this.icnbtnBackup.Click += new System.EventHandler(this.icnbtnBackup_Click);

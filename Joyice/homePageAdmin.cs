@@ -136,7 +136,43 @@ namespace Joyice
                 command.ExecuteNonQuery();
                 conn.Close();
 
-                MessageBox.Show($"{fileName} created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (MessageBox.Show($"{fileName} created! Do you want to restore now?", "Restore Now?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string database = conn.Database.ToString();
+                    conn.Open();
+
+                    try
+                    {
+                        string str1 = string.Format("ALTER DATABASE [" + database + "] SET SINGLE_USER WITH ROLLBACK IMMEDIATE");
+                        SqlCommand cmd1 = new SqlCommand(str1, conn);
+                        cmd1.ExecuteNonQuery();
+
+                        string str2 = "USE MASTER RESTORE DATABASE [" + database + "] FROM DISK = '" + $"{backupDBFilePath}\\{fileName}" + "' WITH REPLACE;";
+                        SqlCommand cmd2 = new SqlCommand(str2, conn);
+                        cmd2.ExecuteNonQuery();
+
+                        string str3 = string.Format("ALTER DATABASE [" + database + "] SET MULTI_USER");
+                        SqlCommand cmd3 = new SqlCommand(str3, conn);
+                        cmd3.ExecuteNonQuery();
+
+                        MessageBox.Show("Database Restored!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        conn.Close();
+                    }
+                    catch (SqlException ex)
+                    {
+                        // Handle SQL exceptions
+                        MessageBox.Show("An error occurred while restoring the database: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        conn.Close();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle other exceptions
+                        MessageBox.Show("An error occurred while restoring the database: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        conn.Close();
+                    }
+                }
+
             }
 
 

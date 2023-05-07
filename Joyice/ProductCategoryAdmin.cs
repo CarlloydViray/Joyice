@@ -10,7 +10,7 @@ namespace Joyice
     {
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-91I62MI\\SQLEXPRESS;Initial Catalog=joyice;Integrated Security=True");
         DateTime currentDate = DateTime.Now;
-        String datagridQuery = "SELECT \r\n    categories_table.cat_ID, \r\n    categories_table.cat_name, \r\n\tSUM(products_table.prod_qty) AS products_under,\r\n    categories_table.cat_createdAt, \r\n    users_table.user_firstName + ' ' + users_table.user_lastName AS Created_by, \r\n    categories_table.cat_modifiedByID, \r\n    categories_table.cat_modifiedAt \r\nFROM \r\n    categories_table \r\n    INNER JOIN users_table ON categories_table.userID = users_table.userID\r\n    LEFT JOIN products_table ON categories_table.cat_ID = products_table.cat_ID\r\nGROUP BY \r\n    categories_table.cat_ID, \r\n    categories_table.cat_name, \r\n    categories_table.cat_createdAt, \r\n    users_table.user_firstName, \r\n    users_table.user_lastName, \r\n    categories_table.cat_modifiedByID, \r\n    categories_table.cat_modifiedAt\r\n\r\n";
+        String datagridQuery = "SELECT categories_table.cat_ID AS Category_ID, categories_table.cat_name AS Category_Name, SUM(products_table.prod_qty) AS Products_UnderCategory, categories_table.cat_createdAt AS Category_CreatedAt, users_table.user_firstName + ' ' + users_table.user_lastName AS Category_CreatedBy, categories_table.cat_modifiedAt AS Category_ModifiedAt FROM categories_table INNER JOIN users_table ON categories_table.userID = users_table.userID LEFT JOIN products_table ON categories_table.cat_ID = products_table.cat_ID GROUP BY categories_table.cat_ID, categories_table.cat_name, categories_table.cat_createdAt, users_table.user_firstName, users_table.user_lastName, categories_table.cat_modifiedByID, categories_table.cat_modifiedAt";
 
         public string userIDValue { get; set; }
 
@@ -256,7 +256,7 @@ namespace Joyice
                     dataGridView1.Enabled = true;
                     txtCategory.Enabled = false;
 
-                    MessageBox.Show("User Credentials Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Category Created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -375,7 +375,7 @@ namespace Joyice
                     }
                     else
                     {
-                        if (MessageBox.Show("Do you want to delete category?'" + lblCatID.Text + "'", "Delete data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (MessageBox.Show("Do you want to delete category " + txtCategory.Text + "?", "Delete data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             int catID = int.Parse(lblCatID.Text);
                             conn.Open();

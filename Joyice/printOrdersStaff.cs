@@ -15,7 +15,7 @@ namespace Joyice
     public partial class printOrdersStaff : Form
     {
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-91I62MI\\SQLEXPRESS;Initial Catalog=joyice;Integrated Security=True");
-        String datagridQuery = "SELECT orders_table.order_ID, customers_table.cus_name, products_table.prod_name, orders_table.order_qty, orders_table.order_date, users_table.user_firstName +' '+ users_table.user_lastName AS order_createdBy FROM orders_table INNER JOIN products_table ON orders_table.prod_ID = products_table.prod_ID INNER JOIN customers_table ON orders_table.cus_ID = customers_table.cus_ID INNER JOIN users_table ON orders_table.userID = users_table.userID";
+        String datagridQuery = "SELECT orders_table.order_ID, customers_table.cus_name AS Customer_Name, products_table.prod_name AS Product_Name, orders_table.order_qty AS Order_Quantity,orders_table.order_price AS Order_OverallPrice, orders_table.order_date AS Order_Date, users_table.user_firstName +' '+ users_table.user_lastName AS order_createdBy FROM orders_table INNER JOIN products_table ON orders_table.prod_ID = products_table.prod_ID INNER JOIN customers_table ON orders_table.cus_ID = customers_table.cus_ID INNER JOIN users_table ON orders_table.userID = users_table.userID";
         string ordersPDFpath = ConfigurationManager.AppSettings["ordersPDFpath"];
         string logoPDFPath = ConfigurationManager.AppSettings["logoPDFPath"];
         DateTime currentTime = DateTime.Now;
@@ -47,8 +47,15 @@ namespace Joyice
                 txtCusName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 txtProd.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                 txtQty.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                txtDate.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                txtMadeBy.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                txtOverall.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                string dateValue = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                txtMadeBy.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+                DateTime dateTime;
+                if (DateTime.TryParse(dateValue, out dateTime))
+                {
+                    txtDate.Text = dateTime.ToString("yyyy-MM-dd");
+                }
 
             }
         }
@@ -117,7 +124,7 @@ namespace Joyice
                         document.Add(new Paragraph("\n\n"));
                         Paragraph para = new Paragraph();
 
-                        para.Add($"Order ID: {txtID.Text}\nCustomer Name: {txtCusName.Text}\nOrder Details: \n    -> Product Name: {txtProd.Text}\n    -> Product Quantity: {txtQty.Text}\n    -> Order Date: {txtDate.Text}\n    -> Order Create By: {txtMadeBy.Text}\n");
+                        para.Add($"Order ID: {txtID.Text}\nCustomer Name: {txtCusName.Text}\nOrder Details: \n    -> Product Name: {txtProd.Text}\n    -> Product Quantity: {txtQty.Text}\n    -> Overall Price: {txtOverall.Text}\n    -> Order Date: {txtDate.Text}\n    -> Order Create By: {txtMadeBy.Text}\n");
 
                         document.Add(para);
 
@@ -131,7 +138,6 @@ namespace Joyice
                     }
                     catch (Exception ex)
                     {
-                        // Handle any errors that occur during PDF generation
                         MessageBox.Show(ex.Message);
                     }
 

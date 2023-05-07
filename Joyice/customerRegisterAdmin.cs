@@ -9,7 +9,7 @@ namespace Joyice
     {
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-91I62MI\\SQLEXPRESS;Initial Catalog=joyice;Integrated Security=True");
 
-        string datagridQuery = "SELECT customers_table.cus_ID, customers_table.cus_name, customers_table.cus_address, customers_table.cus_contactNum, customers_table.cus_email, users_table.user_firstName + ' ' + users_table.user_lastName AS created_by FROM customers_table INNER JOIN users_table ON customers_table.userID = users_table.userID";
+        string datagridQuery = "SELECT customers_table.cus_name AS Customer_Name, customers_table.cus_address AS Customer_Address, customers_table.cus_contactNum AS Customer_ContactNumber, customers_table.cus_email AS Customer_Email, users_table.user_firstName + ' ' + users_table.user_lastName AS created_by FROM customers_table INNER JOIN users_table ON customers_table.userID = users_table.userID";
         public string userIDValue { get; set; }
         public customerRegisterAdmin()
         {

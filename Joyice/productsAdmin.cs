@@ -10,6 +10,7 @@ namespace Joyice
     {
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-91I62MI\\SQLEXPRESS;Initial Catalog=joyice;Integrated Security=True");
         DateTime currentDate = DateTime.Now;
+        String datagridQuery = "SELECT products_table.prod_ID, categories_table.cat_name AS Category_Name, products_table.prod_name AS Product_Name, products_table.prod_qty AS Product_Quantity, products_table.prod_price AS Product_Price, users_table.user_firstName + ' ' + users_table.user_lastName AS Product_CreatedBy, products_table.prod_createdAt AS Product_CreatedAt, products_table.prod_modifiedAt AS Product_ModifiedAt FROM products_table INNER JOIN categories_table ON products_table.cat_ID = categories_table.cat_ID INNER JOIN users_table ON products_table.prod_createdBy = users_table.userID";
 
         public string userIDValue { get; set; }
 
@@ -18,7 +19,8 @@ namespace Joyice
             InitializeComponent();
             txtProduct.TabIndex = 0;
             cmProdCat.TabIndex = 1;
-            txtQty.TabIndex = 2;
+            txtPrice.TabIndex = 2;
+            txtQty.TabIndex = 3;
 
         }
 
@@ -35,7 +37,7 @@ namespace Joyice
             cmProdCat.DisplayMember = "cat_name";
             cmProdCat.ValueMember = "cat_ID";
 
-            SqlCommand cmd3 = new SqlCommand("SELECT products_table.prod_ID, categories_table.cat_name AS category, products_table.prod_name, products_table.prod_qty, users_table.user_firstName + ' ' + users_table.user_lastName AS Created_by, products_table.prod_createdAt, products_table.prod_modifiedBy AS modified_byID,products_table.prod_modifiedAt FROM products_table INNER JOIN categories_table ON products_table.cat_ID = categories_table.cat_ID INNER JOIN users_table ON products_table.prod_createdBy = users_table.userID", conn);
+            SqlCommand cmd3 = new SqlCommand(datagridQuery, conn);
 
             SqlDataAdapter da3 = new SqlDataAdapter(cmd3);
 
@@ -121,6 +123,7 @@ namespace Joyice
                     txtProduct.Enabled = true;
                     txtQty.Enabled = true;
                     cmProdCat.Enabled = true;
+                    txtPrice.Enabled = true;
 
                 }
                 else
@@ -160,10 +163,11 @@ namespace Joyice
                 else
                 {
                     conn.Open();
-                    SqlCommand cmd2 = new SqlCommand("INSERT INTO products_table (prod_name, cat_ID, prod_qty, prod_createdBy, prod_createdAt) VALUES (@prod_name, @cat_ID, @prod_qty, @prod_createdBy, @prod_createdAt)", conn);
+                    SqlCommand cmd2 = new SqlCommand("INSERT INTO products_table (prod_name, cat_ID, prod_qty, prod_price, prod_createdBy, prod_createdAt) VALUES (@prod_name, @cat_ID, @prod_qty, @prod_price, @prod_createdBy, @prod_createdAt)", conn);
                     cmd2.Parameters.AddWithValue("@prod_name", txtProduct.Text);
                     cmd2.Parameters.AddWithValue("@cat_ID", cmProdCat.SelectedValue);
                     cmd2.Parameters.AddWithValue("@prod_qty", txtQty.Text);
+                    cmd2.Parameters.AddWithValue("@prod_price", txtPrice.Text);
                     cmd2.Parameters.AddWithValue("@prod_createdBy", lblUserID.Text);
                     cmd2.Parameters.AddWithValue("@prod_createdAt", currentDate);
 
@@ -172,7 +176,7 @@ namespace Joyice
                     txtProduct.Clear();
                     txtQty.Clear();
 
-                    SqlCommand cmd3 = new SqlCommand("SELECT products_table.prod_ID, categories_table.cat_name AS category, products_table.prod_name, products_table.prod_qty, users_table.user_firstName + ' ' + users_table.user_lastName AS Created_by, products_table.prod_createdAt, products_table.prod_modifiedBy AS modified_byID,products_table.prod_modifiedAt FROM products_table INNER JOIN categories_table ON products_table.cat_ID = categories_table.cat_ID INNER JOIN users_table ON products_table.prod_createdBy = users_table.userID", conn);
+                    SqlCommand cmd3 = new SqlCommand(datagridQuery, conn);
                     SqlDataAdapter da3 = new SqlDataAdapter(cmd3);
 
                     DataTable dt3 = new DataTable();
@@ -194,6 +198,7 @@ namespace Joyice
                     txtProduct.Enabled = false;
                     txtQty.Enabled = false;
                     cmProdCat.Enabled = false;
+                    txtPrice.Enabled = false;
 
                     MessageBox.Show("Product added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -219,6 +224,7 @@ namespace Joyice
             txtQty.Enabled = false;
             cmProdCat.Enabled = false;
             btnCancel.Visible = false;
+            txtPrice.Enabled = false;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -284,6 +290,7 @@ namespace Joyice
                     txtProduct.Enabled = true;
                     txtQty.Enabled = true;
                     cmProdCat.Enabled = true;
+                    txtPrice.Enabled = true;
 
                 }
                 else
@@ -301,6 +308,7 @@ namespace Joyice
                 cmProdCat.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 txtProduct.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                 txtQty.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtPrice.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
             }
         }
 
@@ -313,11 +321,12 @@ namespace Joyice
             else
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE products_table SET prod_name=@prod_name, prod_qty=@prod_qty, cat_ID=@cat_ID, prod_modifiedBy=@prod_modifiedBy, prod_modifiedAt=@prod_modifiedAt WHERE prod_ID=@prod_ID", conn);
+                SqlCommand cmd = new SqlCommand("UPDATE products_table SET prod_name=@prod_name, prod_qty=@prod_qty, prod_price=@prod_price, cat_ID=@cat_ID, prod_modifiedBy=@prod_modifiedBy, prod_modifiedAt=@prod_modifiedAt WHERE prod_ID=@prod_ID", conn);
 
 
                 cmd.Parameters.AddWithValue("@prod_name", txtProduct.Text);
                 cmd.Parameters.AddWithValue("@prod_qty", txtQty.Text);
+                cmd.Parameters.AddWithValue("@prod_price", txtPrice.Text);
                 cmd.Parameters.AddWithValue("@cat_ID", cmProdCat.SelectedValue);
                 cmd.Parameters.AddWithValue("@prod_modifiedBy", lblUserID.Text);
                 cmd.Parameters.AddWithValue("@prod_modifiedAt", currentDate);
@@ -331,7 +340,7 @@ namespace Joyice
 
                 MessageBox.Show("User Credentials Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                SqlCommand cmd2 = new SqlCommand("SELECT products_table.prod_ID, categories_table.cat_name AS category, products_table.prod_name, products_table.prod_qty, users_table.user_firstName + ' ' + users_table.user_lastName AS Created_by, products_table.prod_createdAt, products_table.prod_modifiedBy AS modified_byID,products_table.prod_modifiedAt FROM products_table INNER JOIN categories_table ON products_table.cat_ID = categories_table.cat_ID INNER JOIN users_table ON products_table.prod_createdBy = users_table.userID", conn);
+                SqlCommand cmd2 = new SqlCommand(datagridQuery, conn);
 
                 SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
 
@@ -349,12 +358,14 @@ namespace Joyice
 
                 txtProduct.Clear();
                 txtQty.Clear();
+                txtPrice.Clear();
 
                 dataGridView1.Enabled = true;
                 txtProduct.Enabled = false;
                 txtQty.Enabled = false;
                 cmProdCat.Enabled = false;
                 btnCancel.Visible = false;
+                txtPrice.Enabled = false;
 
             }
         }
@@ -418,29 +429,33 @@ namespace Joyice
                 {
                     if (MessageBox.Show("Do you want to delete product?", "Delete data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        conn.Open();
-                        SqlCommand cmd3 = new SqlCommand("DELETE products_table WHERE prod_ID=@prod_ID", conn);
+                        if (MessageBox.Show("Deleting the product will also delete the orders containing the product", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            conn.Open();
+                            SqlCommand cmd3 = new SqlCommand("DELETE products_table WHERE prod_ID=@prod_ID", conn);
 
 
-                        cmd3.Parameters.AddWithValue("@prod_ID", lblProdID.Text);
+                            cmd3.Parameters.AddWithValue("@prod_ID", lblProdID.Text);
 
-                        cmd3.ExecuteNonQuery();
-                        conn.Close();
+                            cmd3.ExecuteNonQuery();
+                            conn.Close();
 
-                        txtProduct.Clear();
-                        txtQty.Clear();
+                            txtProduct.Clear();
+                            txtQty.Clear();
 
 
-                        SqlCommand cmd2 = new SqlCommand("SELECT products_table.prod_ID, categories_table.cat_name AS category, products_table.prod_name, products_table.prod_qty, users_table.user_firstName + ' ' + users_table.user_lastName AS Created_by, products_table.prod_createdAt, products_table.prod_modifiedBy AS modified_byID,products_table.prod_modifiedAt FROM products_table INNER JOIN categories_table ON products_table.cat_ID = categories_table.cat_ID INNER JOIN users_table ON products_table.prod_createdBy = users_table.userID", conn);
+                            SqlCommand cmd2 = new SqlCommand(datagridQuery, conn);
 
-                        SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
+                            SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
 
-                        DataTable dt2 = new DataTable();
+                            DataTable dt2 = new DataTable();
 
-                        da2.Fill(dt2);
-                        dataGridView1.DataSource = dt2;
+                            da2.Fill(dt2);
+                            dataGridView1.DataSource = dt2;
 
-                        MessageBox.Show("Product Deleted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Product Deleted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
                     }
 
                 }
@@ -460,6 +475,14 @@ namespace Joyice
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

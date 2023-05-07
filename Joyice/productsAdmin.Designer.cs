@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.btnNewUpdate = new System.Windows.Forms.Button();
@@ -47,6 +47,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.cmProdCat = new System.Windows.Forms.ComboBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -76,7 +78,7 @@
             // btnNewUpdate
             // 
             this.btnNewUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnNewUpdate.Location = new System.Drawing.Point(590, 199);
+            this.btnNewUpdate.Location = new System.Drawing.Point(590, 224);
             this.btnNewUpdate.Name = "btnNewUpdate";
             this.btnNewUpdate.Size = new System.Drawing.Size(253, 23);
             this.btnNewUpdate.TabIndex = 114;
@@ -88,7 +90,7 @@
             // btnInsert
             // 
             this.btnInsert.ForeColor = System.Drawing.Color.Black;
-            this.btnInsert.Location = new System.Drawing.Point(590, 199);
+            this.btnInsert.Location = new System.Drawing.Point(590, 224);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(253, 23);
             this.btnInsert.TabIndex = 113;
@@ -102,33 +104,33 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 310);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.Location = new System.Drawing.Point(15, 355);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1433, 617);
+            this.dataGridView1.Size = new System.Drawing.Size(1433, 572);
             this.dataGridView1.TabIndex = 112;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // btnCancel
             // 
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(590, 228);
+            this.btnCancel.Location = new System.Drawing.Point(590, 253);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(253, 23);
             this.btnCancel.TabIndex = 111;
@@ -140,7 +142,7 @@
             // btnDelete
             // 
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(590, 257);
+            this.btnDelete.Location = new System.Drawing.Point(590, 282);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(253, 23);
             this.btnDelete.TabIndex = 110;
@@ -151,7 +153,7 @@
             // btnUpdate
             // 
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(590, 228);
+            this.btnUpdate.Location = new System.Drawing.Point(590, 253);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(253, 23);
             this.btnUpdate.TabIndex = 109;
@@ -162,7 +164,7 @@
             // btnCreate
             // 
             this.btnCreate.ForeColor = System.Drawing.Color.Black;
-            this.btnCreate.Location = new System.Drawing.Point(590, 199);
+            this.btnCreate.Location = new System.Drawing.Point(590, 224);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(253, 23);
             this.btnCreate.TabIndex = 108;
@@ -222,7 +224,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(535, 169);
+            this.label3.Location = new System.Drawing.Point(535, 195);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 119;
@@ -232,7 +234,7 @@
             // 
             this.txtQty.Enabled = false;
             this.txtQty.ForeColor = System.Drawing.Color.Black;
-            this.txtQty.Location = new System.Drawing.Point(590, 166);
+            this.txtQty.Location = new System.Drawing.Point(590, 192);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(253, 20);
             this.txtQty.TabIndex = 120;
@@ -254,12 +256,34 @@
             this.cmProdCat.SelectedIndexChanged += new System.EventHandler(this.cmProdCat_SelectedIndexChanged);
             this.cmProdCat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmProdCat_KeyPress);
             // 
+            // txtPrice
+            // 
+            this.txtPrice.Enabled = false;
+            this.txtPrice.ForeColor = System.Drawing.Color.Black;
+            this.txtPrice.Location = new System.Drawing.Point(590, 166);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(253, 20);
+            this.txtPrice.TabIndex = 123;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(495, 169);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 13);
+            this.label4.TabIndex = 122;
+            this.label4.Text = "Price per Porduct";
+            // 
             // productsAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1477, 978);
             this.ControlBox = false;
+            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.cmProdCat);
             this.Controls.Add(this.txtQty);
             this.Controls.Add(this.label3);
@@ -307,5 +331,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtQty;
         private System.Windows.Forms.ComboBox cmProdCat;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.Label label4;
     }
 }

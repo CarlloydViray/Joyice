@@ -11,6 +11,8 @@ namespace Joyice
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-91I62MI\\SQLEXPRESS;Initial Catalog=joyice;Integrated Security=True");
         String sex;
 
+        string datagridQuery = "SELECT userID, user_firstName, user_lastName, user_sex, user_bday, user_address, user_contactNum, user_email, username FROM users_table";
+
 
         public string userIDValue { get; set; }
 
@@ -26,10 +28,9 @@ namespace Joyice
             txtAddress.TabIndex = 5;
             txtContactNumber.TabIndex = 6;
             txtEmail.TabIndex = 7;
-            cmUserType.TabIndex = 8;
-            txtUsername.TabIndex = 9;
-            txtPassword.TabIndex = 10;
-            txtRePassword.TabIndex = 11;
+            txtUsername.TabIndex = 8;
+            txtPassword.TabIndex = 9;
+            txtRePassword.TabIndex = 10;
 
         }
 
@@ -45,7 +46,6 @@ namespace Joyice
             txtUsername.Clear();
             txtPassword.Clear();
             txtRePassword.Clear();
-            cmUserType.Text = "Select User Type";
             rdMale.Checked = false;
             rdFemale.Checked = false;
 
@@ -121,7 +121,6 @@ namespace Joyice
                     txtEmail.Enabled = true;
                     txtUsername.Enabled = true;
                     dtpBday.Enabled = true;
-                    cmUserType.Enabled = true;
                     txtPassword.Enabled = true;
                     txtRePassword.Enabled = true;
                     rdMale.Enabled = true;
@@ -211,7 +210,6 @@ namespace Joyice
                     txtEmail.Enabled = true;
                     txtUsername.Enabled = true;
                     dtpBday.Enabled = true;
-                    cmUserType.Enabled = true;
                     txtPassword.Enabled = true;
                     txtRePassword.Enabled = true;
                     rdMale.Enabled = true;
@@ -298,11 +296,10 @@ namespace Joyice
                         txtUsername.Clear();
                         txtPassword.Clear();
                         txtRePassword.Clear();
-                        cmUserType.Text = "Select User Type";
                         rdMale.Checked = false;
                         rdFemale.Checked = false;
 
-                        SqlCommand cmd2 = new SqlCommand("SELECT userID, user_firstName, user_lastName, user_sex, user_bday, user_address, user_contactNum, user_email, user_type, username FROM users_table", conn);
+                        SqlCommand cmd2 = new SqlCommand(datagridQuery, conn);
 
                         SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
 
@@ -343,8 +340,7 @@ namespace Joyice
                 txtAddress.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
                 txtContactNumber.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
                 txtEmail.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
-                cmUserType.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
-                txtUsername.Text = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
+                txtUsername.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
                 lblId.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             }
         }
@@ -356,7 +352,7 @@ namespace Joyice
 
         private void userRegisterAdmin_Load(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("SELECT userID, user_firstName, user_lastName, user_sex, user_bday, user_address, user_contactNum, user_email, user_type, username FROM users_table", conn);
+            SqlCommand cmd = new SqlCommand(datagridQuery, conn);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
 
@@ -387,7 +383,6 @@ namespace Joyice
             txtEmail.Enabled = false;
             txtUsername.Enabled = false;
             dtpBday.Enabled = false;
-            cmUserType.Enabled = false;
             txtPassword.Enabled = false;
             txtRePassword.Enabled = false;
             rdMale.Enabled = false;
@@ -408,7 +403,7 @@ namespace Joyice
             {
                 sexChecked = "female";
             }
-            if (txtFirstName.Text == string.Empty || txtLastName.Text == string.Empty || sexChecked == string.Empty || dtpBday.Text == string.Empty || txtAddress.Text == string.Empty || txtContactNumber.Text == string.Empty || txtEmail.Text == string.Empty || txtUsername.Text == string.Empty || txtPassword.Text == string.Empty || txtRePassword.Text == string.Empty || cmUserType.Text == "Select user type")
+            if (txtFirstName.Text == string.Empty || txtLastName.Text == string.Empty || sexChecked == string.Empty || dtpBday.Text == string.Empty || txtAddress.Text == string.Empty || txtContactNumber.Text == string.Empty || txtEmail.Text == string.Empty || txtUsername.Text == string.Empty || txtPassword.Text == string.Empty || txtRePassword.Text == string.Empty)
             {
                 MessageBox.Show("Populate all fields", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -439,7 +434,6 @@ namespace Joyice
                         txtUsername.Clear();
                         txtPassword.Clear();
                         txtRePassword.Clear();
-                        cmUserType.Text = "Select User Type";
                         rdMale.Checked = false;
                         rdFemale.Checked = false;
                         conn.Close();
@@ -457,7 +451,7 @@ namespace Joyice
                         cmd2.Parameters.AddWithValue("@user_address", txtAddress.Text);
                         cmd2.Parameters.AddWithValue("@user_contactNum", txtContactNumber.Text);
                         cmd2.Parameters.AddWithValue("@user_email", txtEmail.Text);
-                        cmd2.Parameters.AddWithValue("@user_type", cmUserType.Text);
+                        cmd2.Parameters.AddWithValue("@user_type", "Staff");
                         cmd2.Parameters.AddWithValue("@username", txtUsername.Text);
                         cmd2.Parameters.AddWithValue("@password", txtPassword.Text);
                         cmd2.ExecuteNonQuery();
@@ -471,13 +465,12 @@ namespace Joyice
                         txtUsername.Clear();
                         txtPassword.Clear();
                         txtRePassword.Clear();
-                        cmUserType.Text = "Select User Type";
                         rdMale.Checked = false;
                         rdFemale.Checked = false;
 
                         MessageBox.Show("User Created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        SqlCommand cmd3 = new SqlCommand("SELECT userID, user_firstName, user_lastName, user_sex, user_bday, user_address, user_contactNum, user_email, user_type, username FROM users_table", conn);
+                        SqlCommand cmd3 = new SqlCommand(datagridQuery, conn);
 
                         SqlDataAdapter da3 = new SqlDataAdapter(cmd3);
 
@@ -501,7 +494,6 @@ namespace Joyice
                         txtEmail.Enabled = false;
                         txtUsername.Enabled = false;
                         dtpBday.Enabled = false;
-                        cmUserType.Enabled = false;
                         txtPassword.Enabled = false;
                         txtRePassword.Enabled = false;
                         rdMale.Enabled = false;
@@ -524,74 +516,80 @@ namespace Joyice
                 sexChecked = "female";
             }
 
-            if (txtFirstName.Text == string.Empty || txtLastName.Text == string.Empty || sex == string.Empty || dtpBday.Text == string.Empty || txtAddress.Text == string.Empty || txtContactNumber.Text == string.Empty || txtEmail.Text == string.Empty || txtUsername.Text == string.Empty || txtPassword.Text == string.Empty || txtRePassword.Text == string.Empty || cmUserType.Text == "Select user type")
+            if (txtFirstName.Text == string.Empty || txtLastName.Text == string.Empty || sex == string.Empty || dtpBday.Text == string.Empty || txtAddress.Text == string.Empty || txtContactNumber.Text == string.Empty || txtEmail.Text == string.Empty || txtUsername.Text == string.Empty || txtPassword.Text == string.Empty || txtRePassword.Text == string.Empty)
             {
                 MessageBox.Show("Populate all fields", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE users_table SET user_firstName=@user_firstName, user_lastName=@user_lastName, user_sex=@user_sex, user_bday=@user_bday, user_address=@user_address, user_contactNum=@user_contactNum, user_email=@user_email, user_type=@user_type, username=@username, password=@password WHERE userID=@userID", conn);
+                if (txtPassword.Text != txtRePassword.Text)
+                {
+                    MessageBox.Show("Passwords Don't Match!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPassword.Clear();
+                    txtRePassword.Clear();
+                }
+                else
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("UPDATE users_table SET user_firstName=@user_firstName, user_lastName=@user_lastName, user_sex=@user_sex, user_bday=@user_bday, user_address=@user_address, user_contactNum=@user_contactNum, user_email=@user_email, user_type=@user_type, username=@username, password=@password WHERE userID=@userID", conn);
 
 
-                cmd.Parameters.AddWithValue("@userID", lblId.Text);
-                cmd.Parameters.AddWithValue("@user_firstName", txtFirstName.Text);
-                cmd.Parameters.AddWithValue("@user_lastName", txtLastName.Text);
-                cmd.Parameters.AddWithValue("@user_sex", sexChecked);
-                cmd.Parameters.AddWithValue("@user_bday", dtpBday.Text);
-                cmd.Parameters.AddWithValue("@user_address", txtAddress.Text);
-                cmd.Parameters.AddWithValue("@user_contactNum", txtContactNumber.Text);
-                cmd.Parameters.AddWithValue("@user_email", txtEmail.Text);
-                cmd.Parameters.AddWithValue("@user_type", cmUserType.Text);
-                cmd.Parameters.AddWithValue("@username", txtUsername.Text);
-                cmd.Parameters.AddWithValue("@password", txtPassword.Text);
-                cmUserType.Text = "Select User Type";
-                rdMale.Checked = false;
-                rdFemale.Checked = false;
-                cmd.ExecuteNonQuery();
-                conn.Close();
+                    cmd.Parameters.AddWithValue("@userID", lblId.Text);
+                    cmd.Parameters.AddWithValue("@user_firstName", txtFirstName.Text);
+                    cmd.Parameters.AddWithValue("@user_lastName", txtLastName.Text);
+                    cmd.Parameters.AddWithValue("@user_sex", sexChecked);
+                    cmd.Parameters.AddWithValue("@user_bday", dtpBday.Text);
+                    cmd.Parameters.AddWithValue("@user_address", txtAddress.Text);
+                    cmd.Parameters.AddWithValue("@user_contactNum", txtContactNumber.Text);
+                    cmd.Parameters.AddWithValue("@user_email", txtEmail.Text);
+                    cmd.Parameters.AddWithValue("@user_type", "Staff");
+                    cmd.Parameters.AddWithValue("@username", txtUsername.Text);
+                    cmd.Parameters.AddWithValue("@password", txtPassword.Text);
+                    rdMale.Checked = false;
+                    rdFemale.Checked = false;
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
 
-                txtFirstName.Clear();
-                txtLastName.Clear();
-                txtContactNumber.Clear();
-                txtAddress.Clear();
-                txtEmail.Clear();
-                txtUsername.Clear();
-                txtPassword.Clear();
-                txtRePassword.Clear();
+                    txtFirstName.Clear();
+                    txtLastName.Clear();
+                    txtContactNumber.Clear();
+                    txtAddress.Clear();
+                    txtEmail.Clear();
+                    txtUsername.Clear();
+                    txtPassword.Clear();
+                    txtRePassword.Clear();
 
-                MessageBox.Show("User Credentials Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("User Credentials Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                SqlCommand cmd2 = new SqlCommand("SELECT userID, user_firstName, user_lastName, user_sex, user_bday, user_address, user_contactNum, user_email, user_type, username FROM users_table", conn);
+                    SqlCommand cmd2 = new SqlCommand(datagridQuery, conn);
 
-                SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
+                    SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
 
-                DataTable dt2 = new DataTable();
+                    DataTable dt2 = new DataTable();
 
-                da2.Fill(dt2);
-                dataGridView1.DataSource = dt2;
+                    da2.Fill(dt2);
+                    dataGridView1.DataSource = dt2;
 
-                btnRegister.Visible = true;
-                btnUpdate.Visible = true;
-                btnDelete.Visible = true;
-                btnSaveChanges.Visible = false;
-                btnCancelRegister.Visible = false;
-                btnSaveRegister.Visible = false;
-                dataGridView1.Enabled = true;
+                    btnRegister.Visible = true;
+                    btnUpdate.Visible = true;
+                    btnDelete.Visible = true;
+                    btnSaveChanges.Visible = false;
+                    btnCancelRegister.Visible = false;
+                    btnSaveRegister.Visible = false;
+                    dataGridView1.Enabled = true;
 
-                txtFirstName.Enabled = false;
-                txtLastName.Enabled = false;
-                txtContactNumber.Enabled = false;
-                txtAddress.Enabled = false;
-                txtEmail.Enabled = false;
-                txtUsername.Enabled = false;
-                dtpBday.Enabled = false;
-                cmUserType.Enabled = false;
-                txtPassword.Enabled = false;
-                txtRePassword.Enabled = false;
-                rdMale.Enabled = false;
-                rdFemale.Enabled = false;
-
+                    txtFirstName.Enabled = false;
+                    txtLastName.Enabled = false;
+                    txtContactNumber.Enabled = false;
+                    txtAddress.Enabled = false;
+                    txtEmail.Enabled = false;
+                    txtUsername.Enabled = false;
+                    dtpBday.Enabled = false;
+                    txtPassword.Enabled = false;
+                    txtRePassword.Enabled = false;
+                    rdMale.Enabled = false;
+                    rdFemale.Enabled = false;
+                }
 
             }
         }
@@ -647,6 +645,11 @@ namespace Joyice
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmUserType_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

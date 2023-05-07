@@ -13,13 +13,13 @@ namespace Joyice
 
         public string userIDValue { get; set; }
 
-        String datagridQuery2 = "SELECT prod_name, prod_qty FROM products_table";
-        String datagridQuery = "SELECT orders_table.order_ID, customers_table.cus_name, products_table.prod_name, orders_table.order_qty, orders_table.order_date, users_table.user_firstName +' '+ users_table.user_lastName AS order_createdBy FROM orders_table INNER JOIN products_table ON orders_table.prod_ID = products_table.prod_ID INNER JOIN customers_table ON orders_table.cus_ID = customers_table.cus_ID INNER JOIN users_table ON orders_table.userID = users_table.userID";
+        String datagridQuery2 = "SELECT prod_id, prod_name AS Product_Name, prod_qty AS Product_Quantity, prod_price AS Product_Price FROM products_table";
+        String datagridQuery = "SELECT orders_table.order_ID, customers_table.cus_name AS Customer_Name, products_table.prod_name AS Product_Name, orders_table.order_qty AS Order_Quantity,orders_table.order_price AS Order_OverallPrice, orders_table.order_date AS Order_Date, users_table.user_firstName +' '+ users_table.user_lastName AS order_createdBy FROM orders_table INNER JOIN products_table ON orders_table.prod_ID = products_table.prod_ID INNER JOIN customers_table ON orders_table.cus_ID = customers_table.cus_ID INNER JOIN users_table ON orders_table.userID = users_table.userID";
         public customerOrdersStaff()
         {
             InitializeComponent();
             cmName.TabIndex = 0;
-            cmProduct.TabIndex = 1;
+            txtProduct.TabIndex = 1;
             txtQty.TabIndex = 2;
         }
 
@@ -35,15 +35,6 @@ namespace Joyice
             cmName.DataSource = dt;
             cmName.DisplayMember = "cus_name";
             cmName.ValueMember = "cus_ID";
-
-            SqlCommand cmd2 = new SqlCommand("SELECT * FROM products_table", conn);
-            SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
-            DataTable dt2 = new DataTable();
-            da2.Fill(dt2);
-
-            cmProduct.DataSource = dt2;
-            cmProduct.DisplayMember = "prod_name";
-            cmProduct.ValueMember = "prod_ID";
 
             SqlCommand cmd3 = new SqlCommand(datagridQuery, conn);
             SqlDataAdapter da3 = new SqlDataAdapter(cmd3);
@@ -114,10 +105,11 @@ namespace Joyice
                     btnCreate.Visible = false;
 
                     cmName.Enabled = true;
-                    cmProduct.Enabled = true;
+                    txtProduct.Enabled = true;
                     txtQty.Enabled = true;
                     btnOrder.Visible = true;
                     btnCancelRegister.Visible = true;
+                    txtBill.Enabled = true;
 
                     dataGridView1.Enabled = false;
 
@@ -143,7 +135,7 @@ namespace Joyice
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            if (cmName.Text == string.Empty || cmProduct.Text == string.Empty || txtQty.Text == string.Empty)
+            if (cmName.Text == string.Empty || txtProduct.Text == string.Empty || txtQty.Text == string.Empty)
             {
                 MessageBox.Show("Populate all fields", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -152,60 +144,82 @@ namespace Joyice
                 conn.Open();
                 SqlCommand cmd5 = new SqlCommand("SELECT prod_qty FROM products_table WHERE prod_ID = @prod_ID", conn);
 
-                cmd5.Parameters.AddWithValue("@prod_ID", cmProduct.SelectedValue);
+                cmd5.Parameters.AddWithValue("@prod_ID", lblProd_ID.Text);
                 int currentQty = (int)cmd5.ExecuteScalar();
+
                 if (currentQty >= int.Parse(txtQty.Text))
                 {
-                    SqlCommand cmd2 = new SqlCommand("INSERT INTO orders_table (cus_ID, prod_ID, order_qty, order_date, userID) VALUES (@cus_ID, @prod_ID, @order_qty, @order_date, @userID)", conn);
 
-                    cmd2.Parameters.AddWithValue("@cus_ID", cmName.SelectedValue);
-                    cmd2.Parameters.AddWithValue("@prod_ID", cmProduct.SelectedValue);
-                    cmd2.Parameters.AddWithValue("@order_qty", txtQty.Text);
-                    cmd2.Parameters.AddWithValue("@order_date", currentDate);
-                    cmd2.Parameters.AddWithValue("@userID", lblUserID.Text);
-                    cmd2.ExecuteNonQuery();
+                    if (int.TryParse(txtBill.Text, out int billAmount) && int.TryParse(txtOverall.Text, out int overall))
+                    {
+                        if (billAmount > overall)
+                        {
+                            SqlCommand cmd2 = new SqlCommand("INSERT INTO orders_table (cus_ID, prod_ID, order_qty, order_price, order_date, userID) VALUES (@cus_ID, @prod_ID, @order_qty, @order_price, @order_date, @userID)", conn);
 
-
-                    SqlCommand cmd3 = new SqlCommand("UPDATE products_table SET prod_qty = prod_qty - @order_qty WHERE prod_ID = @prod_ID", conn);
-
-                    cmd3.Parameters.AddWithValue("@order_qty", txtQty.Text);
-                    cmd3.Parameters.AddWithValue("@prod_ID", cmProduct.SelectedValue);
-                    cmd3.ExecuteNonQuery();
-
-
-                    conn.Close();
-
-                    cmName.SelectedIndex = -1;
-                    cmProduct.SelectedIndex = -1;
-                    txtQty.Clear();
+                            cmd2.Parameters.AddWithValue("@cus_ID", cmName.SelectedValue);
+                            cmd2.Parameters.AddWithValue("@prod_ID", lblProd_ID.Text);
+                            cmd2.Parameters.AddWithValue("@order_qty", txtQty.Text);
+                            cmd2.Parameters.AddWithValue("@order_price", overall);
+                            cmd2.Parameters.AddWithValue("@order_date", currentDate);
+                            cmd2.Parameters.AddWithValue("@userID", lblUserID.Text);
+                            cmd2.ExecuteNonQuery();
 
 
-                    MessageBox.Show("Order Created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            SqlCommand cmd3 = new SqlCommand("UPDATE products_table SET prod_qty = prod_qty - @order_qty WHERE prod_ID = @prod_ID", conn);
 
-                    SqlCommand cmd4 = new SqlCommand(datagridQuery, conn);
+                            cmd3.Parameters.AddWithValue("@order_qty", txtQty.Text);
+                            cmd3.Parameters.AddWithValue("@prod_ID", lblProd_ID.Text);
+                            cmd3.ExecuteNonQuery();
 
-                    SqlDataAdapter da4 = new SqlDataAdapter(cmd4);
 
-                    DataTable dt4 = new DataTable();
+                            conn.Close();
 
-                    da4.Fill(dt4);
-                    dataGridView1.DataSource = dt4;
+                            cmName.SelectedIndex = -1;
+                            txtProduct.Clear();
+                            txtQty.Clear();
 
-                    SqlCommand cmd6 = new SqlCommand(datagridQuery2, conn);
-                    SqlDataAdapter da6 = new SqlDataAdapter(cmd6);
-                    DataTable dt6 = new DataTable();
-                    da6.Fill(dt6);
-                    dataGridView2.DataSource = dt6;
 
-                    btnCreate.Visible = true;
+                            MessageBox.Show($"Order Created! Change is: {billAmount - overall}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    cmName.Enabled = false;
-                    cmProduct.Enabled = false;
-                    txtQty.Enabled = false;
-                    btnOrder.Visible = false;
-                    btnCancelRegister.Visible = false;
+                            SqlCommand cmd4 = new SqlCommand(datagridQuery, conn);
 
-                    dataGridView1.Enabled = true;
+                            SqlDataAdapter da4 = new SqlDataAdapter(cmd4);
+
+                            DataTable dt4 = new DataTable();
+
+                            da4.Fill(dt4);
+                            dataGridView1.DataSource = dt4;
+
+                            SqlCommand cmd6 = new SqlCommand(datagridQuery2, conn);
+                            SqlDataAdapter da6 = new SqlDataAdapter(cmd6);
+                            DataTable dt6 = new DataTable();
+                            da6.Fill(dt6);
+                            dataGridView2.DataSource = dt6;
+
+                            btnCreate.Visible = true;
+
+                            cmName.Enabled = false;
+                            txtProduct.Enabled = false;
+                            txtQty.Enabled = false;
+                            btnOrder.Visible = false;
+                            btnCancelRegister.Visible = false;
+                            txtBill.Enabled = false;
+
+                            txtBill.Clear();
+                            txtOverall.Clear();
+                            txtPrice.Clear();
+                            txtQty.Clear();
+
+                            dataGridView1.Enabled = true;
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Insufficient Funds", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            txtBill.Clear();
+                            conn.Close();
+                        }
+                    }
 
                 }
                 else
@@ -222,10 +236,14 @@ namespace Joyice
             btnCreate.Visible = true;
 
             cmName.Enabled = false;
-            cmProduct.Enabled = false;
+            txtProduct.Enabled = false;
             txtQty.Enabled = false;
             btnOrder.Visible = false;
             btnCancelRegister.Visible = false;
+            txtBill.Visible = false;
+            txtQty.Clear();
+            txtOverall.Clear();
+            txtBill.Clear();
 
             dataGridView1.Enabled = true;
         }
@@ -235,10 +253,7 @@ namespace Joyice
             e.Handled = true;
         }
 
-        private void cmProduct_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;
-        }
+
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
@@ -248,6 +263,48 @@ namespace Joyice
             da.Fill(dt);
             dataGridView1.DataSource = dt;
             conn.Close();
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cmProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtProduct_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtProduct.Text = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
+            lblProd_ID.Text = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
+            lblPrice.Text = dataGridView2.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtPrice.Text = dataGridView2.Rows[e.RowIndex].Cells[3].Value.ToString();
+
+        }
+
+        private void txtQty_TextChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtQty.Text, out int quantity) && int.TryParse(lblPrice.Text, out int price))
+            {
+                int total = quantity * price;
+                txtOverall.Text = total.ToString();
+            }
+
+        }
+
+        private void txtBill_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

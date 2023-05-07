@@ -39,7 +39,6 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.cmUserType = new System.Windows.Forms.ComboBox();
             this.txtRePassword = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -54,7 +53,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -180,26 +178,11 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // cmUserType
-            // 
-            this.cmUserType.Enabled = false;
-            this.cmUserType.ForeColor = System.Drawing.Color.Black;
-            this.cmUserType.FormattingEnabled = true;
-            this.cmUserType.Items.AddRange(new object[] {
-            "Admin",
-            "Staff"});
-            this.cmUserType.Location = new System.Drawing.Point(835, 170);
-            this.cmUserType.Name = "cmUserType";
-            this.cmUserType.Size = new System.Drawing.Size(121, 21);
-            this.cmUserType.TabIndex = 84;
-            this.cmUserType.Text = "Select User Type";
-            this.cmUserType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmUserType_KeyPress);
-            // 
             // txtRePassword
             // 
             this.txtRePassword.Enabled = false;
             this.txtRePassword.ForeColor = System.Drawing.Color.Black;
-            this.txtRePassword.Location = new System.Drawing.Point(835, 257);
+            this.txtRePassword.Location = new System.Drawing.Point(828, 254);
             this.txtRePassword.Name = "txtRePassword";
             this.txtRePassword.PasswordChar = '*';
             this.txtRePassword.Size = new System.Drawing.Size(253, 20);
@@ -209,7 +192,7 @@
             // 
             this.txtPassword.Enabled = false;
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtPassword.Location = new System.Drawing.Point(835, 228);
+            this.txtPassword.Location = new System.Drawing.Point(828, 225);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(253, 20);
@@ -219,7 +202,7 @@
             // 
             this.txtUsername.Enabled = false;
             this.txtUsername.ForeColor = System.Drawing.Color.Black;
-            this.txtUsername.Location = new System.Drawing.Point(835, 197);
+            this.txtUsername.Location = new System.Drawing.Point(828, 194);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(253, 20);
             this.txtUsername.TabIndex = 81;
@@ -228,7 +211,7 @@
             // 
             this.txtEmail.Enabled = false;
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.Location = new System.Drawing.Point(835, 141);
+            this.txtEmail.Location = new System.Drawing.Point(828, 167);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(253, 20);
             this.txtEmail.TabIndex = 80;
@@ -238,7 +221,7 @@
             // 
             this.txtContactNumber.Enabled = false;
             this.txtContactNumber.ForeColor = System.Drawing.Color.Black;
-            this.txtContactNumber.Location = new System.Drawing.Point(440, 299);
+            this.txtContactNumber.Location = new System.Drawing.Point(828, 141);
             this.txtContactNumber.Name = "txtContactNumber";
             this.txtContactNumber.Size = new System.Drawing.Size(253, 20);
             this.txtContactNumber.TabIndex = 79;
@@ -248,7 +231,7 @@
             // 
             this.txtAddress.Enabled = false;
             this.txtAddress.ForeColor = System.Drawing.Color.Black;
-            this.txtAddress.Location = new System.Drawing.Point(440, 266);
+            this.txtAddress.Location = new System.Drawing.Point(440, 256);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(253, 20);
             this.txtAddress.TabIndex = 78;
@@ -278,7 +261,7 @@
             this.dtpBday.CustomFormat = "MM-dd-yyyy";
             this.dtpBday.Enabled = false;
             this.dtpBday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBday.Location = new System.Drawing.Point(440, 238);
+            this.dtpBday.Location = new System.Drawing.Point(440, 228);
             this.dtpBday.Name = "dtpBday";
             this.dtpBday.Size = new System.Drawing.Size(253, 20);
             this.dtpBday.TabIndex = 75;
@@ -314,7 +297,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(727, 264);
+            this.label11.Location = new System.Drawing.Point(720, 261);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(90, 13);
             this.label11.TabIndex = 72;
@@ -324,7 +307,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(728, 231);
+            this.label10.Location = new System.Drawing.Point(721, 228);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 13);
             this.label10.TabIndex = 71;
@@ -334,27 +317,17 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(728, 200);
+            this.label9.Location = new System.Drawing.Point(721, 197);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 13);
             this.label9.TabIndex = 70;
             this.label9.Text = "Username";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(727, 172);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 13);
-            this.label8.TabIndex = 69;
-            this.label8.Text = "User Type";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(728, 141);
+            this.label7.Location = new System.Drawing.Point(721, 170);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 68;
@@ -364,7 +337,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(333, 302);
+            this.label6.Location = new System.Drawing.Point(721, 144);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 13);
             this.label6.TabIndex = 67;
@@ -374,7 +347,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(333, 269);
+            this.label5.Location = new System.Drawing.Point(333, 259);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 66;
@@ -384,7 +357,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(333, 238);
+            this.label4.Location = new System.Drawing.Point(333, 228);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 65;
@@ -495,7 +468,6 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.cmUserType);
             this.Controls.Add(this.txtRePassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -510,7 +482,6 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -541,7 +512,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.ComboBox cmUserType;
         private System.Windows.Forms.TextBox txtRePassword;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUsername;
@@ -556,7 +526,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

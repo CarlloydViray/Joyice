@@ -20,5 +20,15 @@ namespace Joyice
         {
             pbLogo.ImageLocation = logoPDFPath;
         }
+
+        private void pbLogo_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

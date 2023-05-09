@@ -105,11 +105,11 @@ namespace Joyice
                     btnCreate.Visible = false;
 
                     cmName.Enabled = true;
-                    txtProduct.Enabled = true;
                     txtQty.Enabled = true;
                     btnOrder.Visible = true;
                     btnCancelRegister.Visible = true;
                     txtBill.Enabled = true;
+                    txtBill.Visible = true;
 
                     dataGridView1.Enabled = false;
 
@@ -150,7 +150,7 @@ namespace Joyice
                 if (currentQty >= int.Parse(txtQty.Text))
                 {
 
-                    if (int.TryParse(txtBill.Text, out int billAmount) && int.TryParse(txtOverall.Text, out int overall))
+                    if (double.TryParse(txtBill.Text, out double billAmount) && double.TryParse(txtOverall.Text, out double overall))
                     {
                         if (billAmount > overall)
                         {
@@ -199,7 +199,6 @@ namespace Joyice
                             btnCreate.Visible = true;
 
                             cmName.Enabled = false;
-                            txtProduct.Enabled = false;
                             txtQty.Enabled = false;
                             btnOrder.Visible = false;
                             btnCancelRegister.Visible = false;
@@ -236,11 +235,11 @@ namespace Joyice
             btnCreate.Visible = true;
 
             cmName.Enabled = false;
-            txtProduct.Enabled = false;
             txtQty.Enabled = false;
             btnOrder.Visible = false;
             btnCancelRegister.Visible = false;
             txtBill.Visible = false;
+            txtBill.Enabled = false;
             txtQty.Clear();
             txtOverall.Clear();
             txtBill.Clear();
@@ -291,9 +290,9 @@ namespace Joyice
 
         private void txtQty_TextChanged(object sender, EventArgs e)
         {
-            if (int.TryParse(txtQty.Text, out int quantity) && int.TryParse(lblPrice.Text, out int price))
+            if (int.TryParse(txtQty.Text, out int quantity) && double.TryParse(lblPrice.Text, out double price))
             {
-                int total = quantity * price;
+                double total = quantity * price;
                 txtOverall.Text = total.ToString();
             }
 

@@ -12,6 +12,7 @@ namespace Joyice
         string imgPath = ConfigurationManager.AppSettings["imgFilePath"];
         string defaultProfilePic = ConfigurationManager.AppSettings["defaultProfilePic"];
         string assetsPath = ConfigurationManager.AppSettings["assetsPath"];
+        string logoPDFPath = ConfigurationManager.AppSettings["logoPDFPath"];
 
         DateTime currentTime = DateTime.Now;
 
@@ -25,6 +26,7 @@ namespace Joyice
 
         private void homePageAdmin_Load(object sender, EventArgs e)
         {
+            pbLogo.ImageLocation = logoPDFPath;
             lbluserID.Text = userIDValue;
 
             SqlCommand cmd = new SqlCommand("SELECT * FROM users_table WHERE userID= '" + lbluserID.Text + "'", conn);
@@ -87,6 +89,10 @@ namespace Joyice
 
         private void icnbtnHome_Click(object sender, EventArgs e)
         {
+
+            pnlHighlight.Height = icnbtnHome.Height;
+            pnlHighlight.Top = icnbtnHome.Top;
+
             adminHome adminHome = new adminHome();
             adminHome.TopLevel = false;
             pnlScreen.Controls.Add(adminHome);
@@ -97,6 +103,9 @@ namespace Joyice
 
         private void icnbtnUsers_Click(object sender, EventArgs e)
         {
+            pnlHighlight.Height = icnbtnUsers.Height;
+            pnlHighlight.Top = icnbtnUsers.Top;
+
             userRegisterAdmin userRegisterAdmin = new userRegisterAdmin();
             userRegisterAdmin.TopLevel = false;
             pnlScreen.Controls.Add(userRegisterAdmin);
@@ -109,6 +118,9 @@ namespace Joyice
 
         private void icnbtnProdCat_Click(object sender, EventArgs e)
         {
+            pnlHighlight.Height = icnbtnProdCat.Height;
+            pnlHighlight.Top = icnbtnProdCat.Top;
+
             ProductCategoryAdmin productCategoryAdmin = new ProductCategoryAdmin();
             productCategoryAdmin.TopLevel = false;
             pnlScreen.Controls.Add(productCategoryAdmin);
@@ -127,7 +139,7 @@ namespace Joyice
             if (MessageBox.Show("Do you want to create database backup?", "Database Backup", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 conn.Open();
-                string fileName = "MyDatabase_" + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + ".bak";
+                string fileName = "JoyiceDB_" + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + ".bak";
                 fileName = fileName.Replace("/", "-").Replace(":", ".");
                 string backupQuery = $"BACKUP DATABASE joyice TO DISK = '{backupDBFilePath}\\{fileName}'";
 
@@ -194,6 +206,9 @@ namespace Joyice
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+            pnlHighlight.Height = iconButton1.Height;
+            pnlHighlight.Top = iconButton1.Top;
+
             AdminEditAccount adminEditAccount = new AdminEditAccount();
             adminEditAccount.TopLevel = false;
             pnlScreen.Controls.Add(adminEditAccount);
@@ -208,6 +223,9 @@ namespace Joyice
 
         private void icnbtnProducts_Click(object sender, EventArgs e)
         {
+            pnlHighlight.Height = icnbtnProducts.Height;
+            pnlHighlight.Top = icnbtnProducts.Top;
+
             productsAdmin productsAdmin = new productsAdmin();
             productsAdmin.TopLevel = false;
             pnlScreen.Controls.Add(productsAdmin);
@@ -233,6 +251,9 @@ namespace Joyice
 
         private void icnbtnReports_Click(object sender, EventArgs e)
         {
+            pnlHighlight.Height = icnbtnReports.Height;
+            pnlHighlight.Top = icnbtnReports.Top;
+
             reportsAdmin reportsAdmin = new reportsAdmin();
             reportsAdmin.TopLevel = false;
             pnlScreen.Controls.Add(reportsAdmin);
@@ -242,6 +263,9 @@ namespace Joyice
 
         private void icnBtnCustomers_Click(object sender, EventArgs e)
         {
+            pnlHighlight.Height = icnBtnCustomers.Height;
+            pnlHighlight.Top = icnBtnCustomers.Top;
+
             customerRegisterAdmin customerRegisterAdmin = new customerRegisterAdmin();
             customerRegisterAdmin.TopLevel = false;
             pnlScreen.Controls.Add(customerRegisterAdmin);

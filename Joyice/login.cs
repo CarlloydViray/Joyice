@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -11,7 +12,7 @@ namespace Joyice
     {
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-91I62MI\\SQLEXPRESS;Initial Catalog=joyice;Integrated Security=True");
         String userID;
-
+        string logoPDFPath = ConfigurationManager.AppSettings["logoPDFPath"];
 
 
         public login()
@@ -116,7 +117,7 @@ namespace Joyice
 
         private void login_Load(object sender, EventArgs e)
         {
-
+            pbLogo.ImageLocation = logoPDFPath;
         }
 
         private void iconButton2_Click(object sender, EventArgs e)

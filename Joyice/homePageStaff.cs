@@ -12,6 +12,7 @@ namespace Joyice
         string imgPath = ConfigurationManager.AppSettings["imgFilePath"];
         string assetsPath = ConfigurationManager.AppSettings["assetsPath"];
         string defaultProfilePic = ConfigurationManager.AppSettings["defaultProfilePic"];
+        string logoPDFPath = ConfigurationManager.AppSettings["logoPDFPath"];
 
         public string userIDValue { get; set; }
         public homePageStaff()
@@ -21,6 +22,9 @@ namespace Joyice
 
         private void icnbtnHome_Click(object sender, EventArgs e)
         {
+            pnlHighlight.Height = icnbtnHome.Height;
+            pnlHighlight.Top = icnbtnHome.Top;
+
             adminHome adminHome = new adminHome();
             adminHome.TopLevel = false;
             pnlScreen.Controls.Add(adminHome);
@@ -43,6 +47,8 @@ namespace Joyice
 
         private void homePageStaff_Load(object sender, EventArgs e)
         {
+            pbLogo.ImageLocation = logoPDFPath;
+
             lbluserID.Text = userIDValue;
 
             SqlCommand cmd = new SqlCommand("SELECT * FROM users_table WHERE userID= '" + lbluserID.Text + "'", conn);
@@ -71,6 +77,9 @@ namespace Joyice
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+            pnlHighlight.Height = iconButton1.Height;
+            pnlHighlight.Top = iconButton1.Top;
+
             AdminEditAccount adminEditAccount = new AdminEditAccount();
             adminEditAccount.TopLevel = false;
             pnlScreen.Controls.Add(adminEditAccount);
@@ -80,6 +89,9 @@ namespace Joyice
 
         private void icnbtnProducts_Click(object sender, EventArgs e)
         {
+            pnlHighlight.Height = icnbtnProducts.Height;
+            pnlHighlight.Top = icnbtnProducts.Top;
+
             productsAdmin productsAdmin = new productsAdmin();
             productsAdmin.TopLevel = false;
             pnlScreen.Controls.Add(productsAdmin);
@@ -90,6 +102,9 @@ namespace Joyice
 
         private void icnbtnProdCat_Click(object sender, EventArgs e)
         {
+            pnlHighlight.Height = icnbtnProdCat.Height;
+            pnlHighlight.Top = icnbtnProdCat.Top;
+
             customerOrdersStaff customerOrdersStaff = new customerOrdersStaff();
             customerOrdersStaff.TopLevel = false;
             pnlScreen.Controls.Add(customerOrdersStaff);
@@ -100,6 +115,9 @@ namespace Joyice
 
         private void icnbtnReports_Click(object sender, EventArgs e)
         {
+            pnlHighlight.Height = icnbtnReports.Height;
+            pnlHighlight.Top = icnbtnReports.Top;
+
             printOrdersStaff printOrdersStaff = new printOrdersStaff();
             printOrdersStaff.TopLevel = false;
             pnlScreen.Controls.Add(printOrdersStaff);
@@ -119,6 +137,126 @@ namespace Joyice
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbluserID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlHighlight_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbLogo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbProgrammer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbUX_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbUI_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbProjManager_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

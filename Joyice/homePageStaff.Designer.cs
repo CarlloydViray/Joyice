@@ -36,6 +36,7 @@
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlHighlight = new System.Windows.Forms.Panel();
             this.icnbtnProdCat = new FontAwesome.Sharp.IconButton();
             this.icnbtnLogout = new FontAwesome.Sharp.IconButton();
             this.icnbtnReports = new FontAwesome.Sharp.IconButton();
@@ -43,6 +44,7 @@
             this.icnbtnHome = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlScreen = new System.Windows.Forms.Panel();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnlScreen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProgrammer)).BeginInit();
             this.panel5.SuspendLayout();
@@ -83,10 +86,15 @@
             this.lbluserID.TabIndex = 31;
             this.lbluserID.Text = "userID";
             this.lbluserID.Visible = false;
+            this.lbluserID.Click += new System.EventHandler(this.lbluserID_Click);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.panel2.Controls.Add(this.icnbtnMin);
             this.panel2.Controls.Add(this.icnbtnClose);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -94,6 +102,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1477, 40);
             this.panel2.TabIndex = 34;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // icnbtnMin
             // 
@@ -151,6 +160,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.panel1.Controls.Add(this.pnlHighlight);
             this.panel1.Controls.Add(this.icnbtnProdCat);
             this.panel1.Controls.Add(this.iconButton1);
             this.panel1.Controls.Add(this.icnbtnLogout);
@@ -163,6 +173,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 1018);
             this.panel1.TabIndex = 33;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pnlHighlight
+            // 
+            this.pnlHighlight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
+            this.pnlHighlight.Location = new System.Drawing.Point(186, 264);
+            this.pnlHighlight.Name = "pnlHighlight";
+            this.pnlHighlight.Size = new System.Drawing.Size(14, 72);
+            this.pnlHighlight.TabIndex = 36;
+            this.pnlHighlight.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHighlight_Paint);
             // 
             // icnbtnProdCat
             // 
@@ -262,10 +282,12 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 32;
             this.label1.Text = "Home";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pnlScreen
             // 
             this.pnlScreen.BackColor = System.Drawing.Color.Transparent;
+            this.pnlScreen.Controls.Add(this.pbLogo);
             this.pnlScreen.Controls.Add(this.panel6);
             this.pnlScreen.Controls.Add(this.panel5);
             this.pnlScreen.Controls.Add(this.panel4);
@@ -279,36 +301,49 @@
             this.pnlScreen.TabIndex = 35;
             this.pnlScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlScreen_Paint);
             // 
+            // pbLogo
+            // 
+            this.pbLogo.Location = new System.Drawing.Point(608, 27);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(278, 259);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 8;
+            this.pbLogo.TabStop = false;
+            this.pbLogo.Click += new System.EventHandler(this.pbLogo_Click);
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.panel6.Controls.Add(this.label10);
             this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.pbProgrammer);
-            this.panel6.Location = new System.Drawing.Point(1128, 297);
+            this.panel6.Location = new System.Drawing.Point(1138, 387);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(317, 402);
             this.panel6.TabIndex = 5;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label10.Location = new System.Drawing.Point(58, 320);
+            this.label10.Font = new System.Drawing.Font("Rockwell", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(62, 320);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(214, 31);
+            this.label10.Size = new System.Drawing.Size(219, 32);
             this.label10.TabIndex = 41;
             this.label10.Text = "PROGRAMMER";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label6.Location = new System.Drawing.Point(74, 268);
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(82, 268);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(183, 31);
+            this.label6.Size = new System.Drawing.Size(175, 31);
             this.label6.TabIndex = 40;
             this.label6.Text = "Carlloyd Viray";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // pbProgrammer
             // 
@@ -319,6 +354,7 @@
             this.pbProgrammer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbProgrammer.TabIndex = 39;
             this.pbProgrammer.TabStop = false;
+            this.pbProgrammer.Click += new System.EventHandler(this.pbProgrammer_Click);
             // 
             // panel5
             // 
@@ -326,30 +362,33 @@
             this.panel5.Controls.Add(this.label9);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.pbUX);
-            this.panel5.Location = new System.Drawing.Point(763, 297);
+            this.panel5.Location = new System.Drawing.Point(773, 387);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(317, 402);
             this.panel5.TabIndex = 6;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label9.Location = new System.Drawing.Point(57, 320);
+            this.label9.Font = new System.Drawing.Font("Rockwell", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(61, 320);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(202, 31);
+            this.label9.Size = new System.Drawing.Size(203, 32);
             this.label9.TabIndex = 40;
             this.label9.Text = "UX DESIGNER";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label5.Location = new System.Drawing.Point(57, 268);
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(68, 268);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(206, 31);
+            this.label5.Size = new System.Drawing.Size(191, 31);
             this.label5.TabIndex = 39;
             this.label5.Text = "Kyle Manansala";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // pbUX
             // 
@@ -360,6 +399,7 @@
             this.pbUX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbUX.TabIndex = 38;
             this.pbUX.TabStop = false;
+            this.pbUX.Click += new System.EventHandler(this.pbUX_Click);
             // 
             // panel4
             // 
@@ -367,30 +407,33 @@
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.pbUI);
-            this.panel4.Location = new System.Drawing.Point(398, 297);
+            this.panel4.Location = new System.Drawing.Point(408, 387);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(317, 402);
             this.panel4.TabIndex = 7;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label8.Location = new System.Drawing.Point(63, 320);
+            this.label8.Font = new System.Drawing.Font("Rockwell", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(66, 318);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(192, 31);
+            this.label8.Size = new System.Drawing.Size(193, 32);
             this.label8.TabIndex = 39;
             this.label8.Text = "UI DESIGNER";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label4.Location = new System.Drawing.Point(46, 268);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(63, 268);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(226, 31);
+            this.label4.Size = new System.Drawing.Size(206, 31);
             this.label4.TabIndex = 38;
             this.label4.Text = "John Azriel Perez";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pbUI
             // 
@@ -401,6 +444,7 @@
             this.pbUI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbUI.TabIndex = 37;
             this.pbUI.TabStop = false;
+            this.pbUI.Click += new System.EventHandler(this.pbUI_Click);
             // 
             // panel3
             // 
@@ -408,30 +452,33 @@
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.pbProjManager);
-            this.panel3.Location = new System.Drawing.Point(33, 297);
+            this.panel3.Location = new System.Drawing.Point(43, 387);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(317, 402);
             this.panel3.TabIndex = 4;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label7.Location = new System.Drawing.Point(14, 320);
+            this.label7.Font = new System.Drawing.Font("Rockwell", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(13, 318);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(286, 31);
+            this.label7.Size = new System.Drawing.Size(290, 32);
             this.label7.TabIndex = 38;
             this.label7.Text = "PROJECT MANAGER";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label3.Location = new System.Drawing.Point(24, 268);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(41, 270);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(261, 31);
+            this.label3.Size = new System.Drawing.Size(234, 31);
             this.label3.TabIndex = 37;
             this.label3.Text = "Ryan Dave Songalla";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pbProjManager
             // 
@@ -442,17 +489,19 @@
             this.pbProjManager.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbProjManager.TabIndex = 36;
             this.pbProjManager.TabStop = false;
+            this.pbProjManager.Click += new System.EventHandler(this.pbProjManager_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
+            this.label2.Font = new System.Drawing.Font("Rockwell", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(52, 192);
+            this.label2.Location = new System.Drawing.Point(130, 306);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1382, 63);
+            this.label2.Size = new System.Drawing.Size(1265, 54);
             this.label2.TabIndex = 3;
             this.label2.Text = "JoyIce Inventory Management System Developers Team";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // homePageStaff
             // 
@@ -475,6 +524,7 @@
             this.panel1.ResumeLayout(false);
             this.pnlScreen.ResumeLayout(false);
             this.pnlScreen.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProgrammer)).EndInit();
@@ -525,5 +575,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pbProjManager;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel pnlHighlight;
+        private System.Windows.Forms.PictureBox pbLogo;
     }
 }

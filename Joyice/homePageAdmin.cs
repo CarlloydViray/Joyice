@@ -140,7 +140,7 @@ namespace Joyice
                 {
                     string database = conn.Database.ToString();
                     conn.Open();
-
+                    this.Cursor = Cursors.WaitCursor;
                     try
                     {
                         string str1 = string.Format("ALTER DATABASE [" + database + "] SET SINGLE_USER WITH ROLLBACK IMMEDIATE");
@@ -170,6 +170,11 @@ namespace Joyice
                         // Handle other exceptions
                         MessageBox.Show("An error occurred while restoring the database: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         conn.Close();
+                    }
+                    finally
+                    {
+                        // Hide the loading state
+                        this.Cursor = Cursors.Default;
                     }
                 }
 

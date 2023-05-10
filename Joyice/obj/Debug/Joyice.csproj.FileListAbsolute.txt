@@ -49,3 +49,4 @@ C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\bin\Debug\BouncyCastle.Crypto
 C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\bin\Debug\itextsharp.dll
 C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\bin\Debug\itextsharp.xml
 C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\obj\Debug\Joyice.reportsAdmin.resources
+C:\Users\Carlloyd Viray\source\repos\Joyice\Joyice\obj\Debug\Joyice.adminDB.resources

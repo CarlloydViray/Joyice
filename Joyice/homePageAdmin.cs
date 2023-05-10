@@ -8,13 +8,11 @@ namespace Joyice
     public partial class homePageAdmin : Form
     {
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-91I62MI\\SQLEXPRESS;Initial Catalog=joyice;Integrated Security=True");
-        string backupDBFilePath = ConfigurationManager.AppSettings["backupDBFilePath"];
-        string imgPath = ConfigurationManager.AppSettings["imgFilePath"];
         string defaultProfilePic = ConfigurationManager.AppSettings["defaultProfilePic"];
         string assetsPath = ConfigurationManager.AppSettings["assetsPath"];
         string logoPDFPath = ConfigurationManager.AppSettings["logoPDFPath"];
 
-        DateTime currentTime = DateTime.Now;
+
 
 
         public string userIDValue { get; set; }
@@ -136,63 +134,14 @@ namespace Joyice
 
         private void icnbtnBackup_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Do you want to create database backup?", "Database Backup", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                conn.Open();
-                string fileName = "JoyiceDB_" + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + ".bak";
-                fileName = fileName.Replace("/", "-").Replace(":", ".");
-                string backupQuery = $"BACKUP DATABASE joyice TO DISK = '{backupDBFilePath}\\{fileName}'";
+            pnlHighlight.Height = icnbtnBackup.Height;
+            pnlHighlight.Top = icnbtnBackup.Top;
 
-
-                SqlCommand command = new SqlCommand(backupQuery, conn);
-                command.ExecuteNonQuery();
-                conn.Close();
-
-                if (MessageBox.Show($"{fileName} created! Do you want to restore now?", "Restore Now?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    string database = conn.Database.ToString();
-                    conn.Open();
-                    this.Cursor = Cursors.WaitCursor;
-                    try
-                    {
-                        string str1 = string.Format("ALTER DATABASE [" + database + "] SET SINGLE_USER WITH ROLLBACK IMMEDIATE");
-                        SqlCommand cmd1 = new SqlCommand(str1, conn);
-                        cmd1.ExecuteNonQuery();
-
-                        string str2 = "USE MASTER RESTORE DATABASE [" + database + "] FROM DISK = '" + $"{backupDBFilePath}\\{fileName}" + "' WITH REPLACE;";
-                        SqlCommand cmd2 = new SqlCommand(str2, conn);
-                        cmd2.ExecuteNonQuery();
-
-                        string str3 = string.Format("ALTER DATABASE [" + database + "] SET MULTI_USER");
-                        SqlCommand cmd3 = new SqlCommand(str3, conn);
-                        cmd3.ExecuteNonQuery();
-
-                        MessageBox.Show("Database Restored!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        conn.Close();
-                    }
-                    catch (SqlException ex)
-                    {
-                        // Handle SQL exceptions
-                        MessageBox.Show("An error occurred while restoring the database: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        conn.Close();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        // Handle other exceptions
-                        MessageBox.Show("An error occurred while restoring the database: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        conn.Close();
-                    }
-                    finally
-                    {
-                        // Hide the loading state
-                        this.Cursor = Cursors.Default;
-                    }
-                }
-
-            }
-
-
+            adminDB adminDB = new adminDB();
+            adminDB.TopLevel = false;
+            pnlScreen.Controls.Add(adminDB);
+            adminDB.BringToFront();
+            adminDB.Show();
 
         }
 

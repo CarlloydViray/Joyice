@@ -165,7 +165,7 @@
             this.icnbtnHome.IconColor = System.Drawing.Color.White;
             this.icnbtnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icnbtnHome.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.icnbtnHome.Location = new System.Drawing.Point(0, 227);
+            this.icnbtnHome.Location = new System.Drawing.Point(1, 206);
             this.icnbtnHome.Name = "icnbtnHome";
             this.icnbtnHome.Size = new System.Drawing.Size(200, 72);
             this.icnbtnHome.TabIndex = 27;
@@ -184,7 +184,7 @@
             this.icnbtnUsers.IconColor = System.Drawing.Color.White;
             this.icnbtnUsers.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icnbtnUsers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.icnbtnUsers.Location = new System.Drawing.Point(2, 322);
+            this.icnbtnUsers.Location = new System.Drawing.Point(3, 301);
             this.icnbtnUsers.Name = "icnbtnUsers";
             this.icnbtnUsers.Size = new System.Drawing.Size(197, 72);
             this.icnbtnUsers.TabIndex = 28;
@@ -203,7 +203,7 @@
             this.icnbtnProdCat.IconColor = System.Drawing.Color.White;
             this.icnbtnProdCat.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icnbtnProdCat.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.icnbtnProdCat.Location = new System.Drawing.Point(0, 512);
+            this.icnbtnProdCat.Location = new System.Drawing.Point(1, 491);
             this.icnbtnProdCat.Name = "icnbtnProdCat";
             this.icnbtnProdCat.Size = new System.Drawing.Size(200, 72);
             this.icnbtnProdCat.TabIndex = 29;
@@ -222,7 +222,7 @@
             this.icnbtnProducts.IconColor = System.Drawing.Color.White;
             this.icnbtnProducts.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icnbtnProducts.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.icnbtnProducts.Location = new System.Drawing.Point(2, 607);
+            this.icnbtnProducts.Location = new System.Drawing.Point(3, 586);
             this.icnbtnProducts.Name = "icnbtnProducts";
             this.icnbtnProducts.Size = new System.Drawing.Size(197, 72);
             this.icnbtnProducts.TabIndex = 30;
@@ -237,15 +237,15 @@
             this.icnbtnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.icnbtnBackup.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.icnbtnBackup.ForeColor = System.Drawing.Color.White;
-            this.icnbtnBackup.IconChar = FontAwesome.Sharp.IconChar.Download;
+            this.icnbtnBackup.IconChar = FontAwesome.Sharp.IconChar.Database;
             this.icnbtnBackup.IconColor = System.Drawing.Color.White;
             this.icnbtnBackup.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icnbtnBackup.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.icnbtnBackup.Location = new System.Drawing.Point(2, 797);
+            this.icnbtnBackup.Location = new System.Drawing.Point(3, 776);
             this.icnbtnBackup.Name = "icnbtnBackup";
             this.icnbtnBackup.Size = new System.Drawing.Size(197, 72);
             this.icnbtnBackup.TabIndex = 32;
-            this.icnbtnBackup.Text = "DATABASE BACKUP | RESTORE";
+            this.icnbtnBackup.Text = "DATABASE MANAGEMENT";
             this.icnbtnBackup.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.icnbtnBackup.UseVisualStyleBackColor = true;
             this.icnbtnBackup.Click += new System.EventHandler(this.icnbtnBackup_Click);
@@ -260,7 +260,7 @@
             this.icnbtnLogout.IconColor = System.Drawing.Color.White;
             this.icnbtnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icnbtnLogout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.icnbtnLogout.Location = new System.Drawing.Point(2, 892);
+            this.icnbtnLogout.Location = new System.Drawing.Point(3, 871);
             this.icnbtnLogout.Name = "icnbtnLogout";
             this.icnbtnLogout.Size = new System.Drawing.Size(197, 72);
             this.icnbtnLogout.TabIndex = 33;
@@ -311,7 +311,7 @@
             // pnlHighlight
             // 
             this.pnlHighlight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.pnlHighlight.Location = new System.Drawing.Point(186, 227);
+            this.pnlHighlight.Location = new System.Drawing.Point(187, 206);
             this.pnlHighlight.Name = "pnlHighlight";
             this.pnlHighlight.Size = new System.Drawing.Size(14, 72);
             this.pnlHighlight.TabIndex = 3;
@@ -326,7 +326,7 @@
             this.icnBtnCustomers.IconColor = System.Drawing.Color.White;
             this.icnBtnCustomers.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icnBtnCustomers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.icnBtnCustomers.Location = new System.Drawing.Point(2, 417);
+            this.icnBtnCustomers.Location = new System.Drawing.Point(3, 396);
             this.icnBtnCustomers.Name = "icnBtnCustomers";
             this.icnBtnCustomers.Size = new System.Drawing.Size(197, 72);
             this.icnBtnCustomers.TabIndex = 35;
@@ -345,7 +345,7 @@
             this.icnbtnReports.IconColor = System.Drawing.Color.White;
             this.icnbtnReports.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icnbtnReports.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.icnbtnReports.Location = new System.Drawing.Point(2, 702);
+            this.icnbtnReports.Location = new System.Drawing.Point(3, 681);
             this.icnbtnReports.Name = "icnbtnReports";
             this.icnbtnReports.Size = new System.Drawing.Size(197, 72);
             this.icnbtnReports.TabIndex = 31;

@@ -8,7 +8,7 @@ namespace Joyice
     public partial class reportsAdmin : Form
     {
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-91I62MI\\SQLEXPRESS;Initial Catalog=joyice;Integrated Security=True");
-        String datagridQuery = "SELECT \r\n  orders_table.order_ID, \r\n  orders_table.cus_ID,\r\n  customers_table.cus_name, \r\n  products_table.prod_name, \r\n  orders_table.order_qty, \r\n  orders_table.order_date, \r\n  users_table.user_firstName + ' ' + users_table.user_lastName AS order_createdBy\r\nFROM orders_table \r\nINNER JOIN products_table ON orders_table.prod_ID = products_table.prod_ID \r\nINNER JOIN customers_table ON orders_table.cus_ID = customers_table.cus_ID \r\nINNER JOIN users_table ON orders_table.userID = users_table.userID\r\n";
+        String datagridQuery = "SELECT \r\n  orders_table.order_ID, \r\n  orders_table.cus_ID,\r\n  customers_table.cus_name, \r\n  products_table.prod_name, \r\n  orders_table.order_qty,\r\n  orders_table.order_price,\r\n  orders_table.order_date,\r\n  users_table.user_firstName + ' ' + users_table.user_lastName AS order_createdBy\r\nFROM orders_table \r\nINNER JOIN products_table ON orders_table.prod_ID = products_table.prod_ID \r\nINNER JOIN customers_table ON orders_table.cus_ID = customers_table.cus_ID \r\nINNER JOIN users_table ON orders_table.userID = users_table.userID\r\n";
         String showDetails = "SELECT COUNT(*) AS order_count, MAX(order_date) AS last_order_date FROM orders_table WHERE cus_ID = @cus_ID";
 
 

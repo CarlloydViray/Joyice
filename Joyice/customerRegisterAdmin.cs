@@ -354,11 +354,11 @@ namespace Joyice
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                lblId.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txtName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txtAddress.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                txtContactNumber.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                txtEmail.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                lblId.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtAddress.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtContactNumber.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                txtEmail.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
             }
         }
 

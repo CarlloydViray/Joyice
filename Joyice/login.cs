@@ -36,12 +36,14 @@ namespace Joyice
                 MessageBox.Show("Username is required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtUsername.Clear();
                 txtPassword.Clear();
+                txtUsername.Focus();
             }
             else if (txtPassword.Text == string.Empty)
             {
                 MessageBox.Show("Password is required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtUsername.Clear();
                 txtPassword.Clear();
+                txtUsername.Focus();
             }
             else
             {
@@ -71,11 +73,9 @@ namespace Joyice
                     }
                     reader.Close();
                     conn.Close();
-
                 }
                 else
                 {
-
                     SqlCommand cmd2 = new SqlCommand("SELECT userID FROM users_table WHERE username = '" + txtUsername.Text + "' AND password = '" + txtPassword.Text + "' AND user_type = 'Staff'", conn);
                     SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
 
@@ -108,9 +108,8 @@ namespace Joyice
                         MessageBox.Show("Incorrect email/password", "warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtUsername.Clear();
                         txtPassword.Clear();
+                        txtUsername.Focus();
                     }
-
-
                 }
             }
         }
@@ -128,6 +127,22 @@ namespace Joyice
         private void iconButton1_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
+            }
+        }
+
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
+            }
         }
     }
 }

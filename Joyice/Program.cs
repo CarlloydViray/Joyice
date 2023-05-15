@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using splashscreenjoyice;
+using System;
 using System.Windows.Forms;
 
 namespace Joyice
@@ -16,7 +14,7 @@ namespace Joyice
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new login());
+            Application.Run(new splash());
         }
     }
 }

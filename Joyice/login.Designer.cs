@@ -108,6 +108,9 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 40);
             this.panel2.TabIndex = 35;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // iconButton1
             // 
@@ -161,9 +164,9 @@
             // 
             // pbLogo
             // 
-            this.pbLogo.Location = new System.Drawing.Point(346, 77);
+            this.pbLogo.Location = new System.Drawing.Point(274, 59);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(168, 155);
+            this.pbLogo.Size = new System.Drawing.Size(318, 198);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 36;
             this.pbLogo.TabStop = false;

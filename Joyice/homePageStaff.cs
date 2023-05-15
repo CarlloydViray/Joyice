@@ -14,6 +14,9 @@ namespace Joyice
         string defaultProfilePic = ConfigurationManager.AppSettings["defaultProfilePic"];
         string logoPDFPath = ConfigurationManager.AppSettings["logoPDFPath"];
 
+        private bool isDragging = false;
+        private System.Drawing.Point offset;
+
         public string userIDValue { get; set; }
         public homePageStaff()
         {
@@ -259,6 +262,26 @@ namespace Joyice
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            isDragging = true;
+            offset = e.Location;
+        }
+
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDragging)
+            {
+                System.Drawing.Point currentScreenPos = PointToScreen(e.Location);
+                Location = new System.Drawing.Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
+            }
+        }
+
+        private void panel2_MouseUp(object sender, MouseEventArgs e)
+        {
+            isDragging = false;
         }
     }
 }

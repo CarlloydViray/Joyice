@@ -126,6 +126,12 @@
     <Compile Include="adminHome.Designer.cs">
       <DependentUpon>adminHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="CircularPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CircularProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="customerOrdersStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,12 @@
     </Compile>
     <Compile Include="customerRegisterAdmin.Designer.cs">
       <DependentUpon>customerRegisterAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="splash.Designer.cs">
+      <DependentUpon>splash.cs</DependentUpon>
     </Compile>
     <Compile Include="homePageAdmin.cs">
       <SubType>Form</SubType>
@@ -202,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="customerRegisterAdmin.resx">
       <DependentUpon>customerRegisterAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="splash.resx">
+      <DependentUpon>splash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="homePageAdmin.resx">
       <DependentUpon>homePageAdmin.cs</DependentUpon>
